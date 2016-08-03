@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/ibm-cloud-solutions/hubot-ibmcloud-service-suggest.svg?branch=master)](https://travis-ci.org/ibm-cloud-solutions/hubot-ibmcloud-service-suggest)
+[![Coverage Status](https://coveralls.io/repos/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/badge.svg?branch=cleanup)](https://coveralls.io/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest?branch=master)
+[![Dependency Status](https://dependencyci.com/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/badge)](https://dependencyci.com/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest)
+[![npm](https://img.shields.io/npm/v/hubot-ibmcloud-service-suggest.svg?maxAge=2592000)](https://www.npmjs.com/package/hubot-ibmcloud-service-suggest)
+
 # hubot-bluemix-suggest
 
 A hubot script for providing assistance to a user who needs help finding Bluemix service(s) that match his needs.
@@ -10,7 +15,7 @@ A hubot script for providing assistance to a user who needs help finding Bluemix
 * [License](#license)
 * [Contribute](#contribute)
 
-## Usage <a id="usage"></a>
+## Usage
 
 Steps for adding this to your existing hubot:
 
@@ -26,19 +31,19 @@ export HUBOT_WATSON_NLC_PASSWORD=<Watson NLC Password>
 
 5. Start up your bot & off to the races!
 
-## Commands <a id="commands"></a>
+## Commands
 - `hubot suggest list` - Show services bot is trained to suggest.
 - `hubot suggest services to ...` - Suggest services to fit your needs.
 
-## Hubot Adapter Setup <a id="hubot-adapter-setup"></a>
+## Hubot Adapter Setup
 
 Hubot supports a variety of adapters to connect to popular chat clients.  For more feature rich experiences you can setup the following adapters:
-- [Slack setup](./docs/adapters/slack.md)
-- [Facebook Messenger setup](./docs/adapters/facebook.md)
+- [Slack setup](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/docs/adapters/slack.md)
+- [Facebook Messenger setup](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/docs/adapters/facebook.md)
 
-## Development <a id="development"></a>
+## Development
 
-Please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) before starting any work.  Steps for running this script for development purposes:
+Please refer to the [CONTRIBUTING.md](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/CONTRIBUTING.md) before starting any work.  Steps for running this script for development purposes:
 
 ### NLC training
 
@@ -59,7 +64,7 @@ export HUBOT_BLUEMIX_PASSWORD=<Password for the Bluemix use>
   - `cp output/nlcTrainingData.csv data/hubot-service-suggest_v2.csv`
 7. Remove the previous version of the .csv file
   - `rm data/hubot-service-suggest_v1.csv`
-  
+
 The bot will automatically detect the version update and train with the new .csv file.
 
 ### Configuration Setup
@@ -86,14 +91,14 @@ Hubot supports a variety of adapters to connect to popular chat clients.
 
 If you just want to use:
  - Terminal: run `npm run start`
- - [Slack: link to setup instructions](./docs/adapters/slack.md)
- - [Facebook Messenger: link to setup instructions](./docs/adapters/facebook.md)
+ - [Slack: link to setup instructions](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/docs/adapters/slack.md)
+ - [Facebook Messenger: link to setup instructions](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/docs/adapters/facebook.md)
 
 
-## License <a id="license"></a>
+## License
 
-See [LICENSE.txt](./LICENSE.txt) for license information.
+See [LICENSE.txt](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/LICENSE.txt) for license information.
 
-## Contribute <a id="contribute"></a>
+## Contribute
 
-Please check out our [Contribution Guidelines](./CONTRIBUTING.md) for detailed information on how you can lend a hand.
+Please check out our [Contribution Guidelines](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/CONTRIBUTING.md) for detailed information on how you can lend a hand.
