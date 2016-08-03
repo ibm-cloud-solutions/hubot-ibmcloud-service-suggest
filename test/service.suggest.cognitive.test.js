@@ -31,7 +31,7 @@ var i18n = new (require('i18n-2'))({
 // At some point we need to toggle this setting based on some user input.
 i18n.setLocale('en');
 
-describe('Interacting with Bluemix Service Suggest via Slack', function () {
+describe('Interacting with Bluemix Service Suggest via Natural Language', function () {
   let room;
 
   before(function() {
@@ -40,15 +40,6 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
 
   beforeEach(function() {
     room = helper.createRoom();
-    // Force all emits into a reply.
-    room.robot.on('ibmcloud.formatter', function(event) {
-      if (event.message) {
-        event.response.reply(event.message);
-      }
-      else {
-        event.response.send({attachments: event.attachments});
-      }
-    });
   });
 
   afterEach(function() {
@@ -67,7 +58,8 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
           done();
         }
       });
-      room.user.say('mimiron', '@hubot suggest list').then();
+      var res = { message: {text: 'list services you can suggest', user: {id: 'mimiron'}}, response: room };
+      room.robot.emit('bluemix.suggest.list', res, {});
     });
   });
 
@@ -79,7 +71,8 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
           done();
         }
       });
-      room.user.say('mimiron', '@hubot suggest service top three').then();
+      var res = { message: {text: 'top three', user: {id: 'mimiron'}}, response: room };
+      room.robot.emit('bluemix.suggest.service', res, {});
     });
   });
 
@@ -90,7 +83,8 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
         expect(event.message).to.contain(i18n.__('suggest.classifer.training'));
         done();
       });
-      room.user.say('mimiron', '@hubot suggest service still training').then();
+      var res = { message: {text: 'still training', user: {id: 'mimiron'}}, response: room };
+      room.robot.emit('bluemix.suggest.service', res, {});
     });
   });
 
@@ -101,7 +95,8 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
         expect(event.message).to.contain(i18n.__('suggest.no.matches'));
         done();
       });
-      room.user.say('mimiron', '@hubot suggest service no matches').then();
+      var res = { message: {text: 'no matches', user: {id: 'mimiron'}}, response: room };
+      room.robot.emit('bluemix.suggest.service', res, {});
     });
   });
 
@@ -112,7 +107,8 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
         expect(event.message).to.contain(i18n.__('suggest.nlc.error'));
         done();
       });
-      room.user.say('mimiron', '@hubot suggest service error').then();
+      var res = { message: {text: 'error', user: {id: 'mimiron'}}, response: room };
+      room.robot.emit('bluemix.suggest.service', res, {});
     });
   });
 
@@ -130,7 +126,8 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
           done();
         }
       });
-      room.user.say('mimiron', '@hubot suggest help').then();
+      var res = { message: {text: 'need help with service suggestions', user: {id: 'mimiron'}}, response: room };
+      room.robot.emit('bluemix.suggest.help', res, {});
     });
   });
 });
