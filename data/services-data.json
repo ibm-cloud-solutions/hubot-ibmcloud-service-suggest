@@ -1,0 +1,592 @@
+{
+  "keyword_relevance_threshold": 70,
+  "concept_relevance_threshold": 70,
+  "blacklist": [
+    "AESearch",
+    "Presence Insights",
+    "Adaptive Security Manager (ASM)",
+    "App User Registry",
+    "Geocoding",
+    "Memcached Cloud",
+    "Message Hub Incubator",
+    "Reappt from Push Technology",
+    "Redis Cloud",
+    "Reverse Geocoding",
+    "Searchly",
+    "Travel Boundary Service",
+    "Validate Address"
+  ],
+  "nlc_class_info": [
+    {
+      "class_name": "Access Trail",
+      "doc_name": "Access Trail",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/AccessTrail/index.html#at_gettingstarted"
+    },
+    {
+      "class_name": "Active Deploy",
+      "doc_name": "Active Deploy",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/ActiveDeploy/index.html"
+    },
+    {
+      "class_name": "Mobile Client Access",
+      "doc_name": "Mobile Client Access, MCA",
+      "doc_link": "https://console.ng.bluemix.net/docs/#services/mobileaccess/index.html"
+    },
+    {
+      "class_name": "AlchemyAPI",
+      "doc_name": "AlchemyAPI, AlchemyLanguage",
+      "doc_link": "http://www.alchemyapi.com/api",
+      "notes": "Manually added AlchemyLanguage."
+    },
+    {
+      "class_name": "IBM Alert Notification",
+      "doc_name": "Alert Notification",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/AlertNotification/index.html"
+    },
+    {
+      "class_name": "API Connect",
+      "doc_name": "API Connect",
+      "doc_link": "https://new-console.ng.bluemix.net/docs/services/apiconnect/index.html"
+    },
+    {
+      "class_name": "API Harmony",
+      "doc_name": "API Harmony",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/APIHarmony/index.html"
+    },
+    {
+      "class_name": "Application Security on Cloud",
+      "doc_name": "Application Security on Cloud, ASC",
+      "doc_link": "https://new-console.ng.bluemix.net/docs/services/ApplicationSecurityonCloud/index.html"
+    },
+    {
+      "class_name": "Auto-Scaling",
+      "doc_name": "Auto-Scaling",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/Auto-Scaling/index.html"
+    },
+    {
+      "class_name": "BlazeMeter",
+      "doc_name": "BlazeMeter",
+      "doc_link": "https://docs.blazemeter.com/"
+    },
+    {
+      "class_name": "Business Rules",
+      "doc_name": "Business Rules",
+      "doc_link": "https://console.ng.bluemix.net/docs/#services/rules/rules.html#rules"
+    },
+    {
+      "class_name": "ClearDB MySQL Database",
+      "doc_name": "ClearDB",
+      "doc_link": "http://www.cleardb.com/developers"
+    },
+    {
+      "class_name": "CloudAMQP",
+      "doc_name": "CloudAMQP",
+      "doc_link": "https://www.cloudamqp.com/docs/index.html"
+    },
+    {
+      "class_name": "Cloudant NoSQL DB",
+      "doc_name": "Cloudant",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/Cloudant/index.html#Cloudant"
+    },
+    {
+      "class_name": "Concept Insights",
+      "doc_name": "Concept Insights",
+      "doc_link": "https://www.ibm.com/watson/developercloud/doc/concept-insights/"
+    },
+    {
+      "class_name": "Connect & Compose",
+      "doc_name": "Connect & Compose",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/ConnectandCompose/index.html"
+    },
+    {
+      "class_name": "Conversation",
+      "doc_name": "Conversation",
+      "doc_link": "https://www.ibm.com/watson/developercloud/doc/conversation/"
+    },
+    {
+      "class_name": "Cupenya Insights",
+      "doc_name": "Cupenya",
+      "doc_link": "http://cupenya.com/product.html"
+    },
+    {
+      "class_name": "dashDB",
+      "doc_name": "dashDB",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/dashDB/dashDB.html"
+    },
+    {
+      "class_name": "Data Cache",
+      "doc_name": "Data Cache",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/DataCache/index.html#data_cache"
+    },
+    {
+      "class_name": "DataWorks",
+      "doc_name": "DataWorks",
+      "doc_link": "https://console.ng.bluemix.net/docs/#services/dataworks1/index.html#dataworks"
+    },
+    {
+      "class_name": "IBM DB2 on Cloud",
+      "doc_name": "DB2",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/DB2OnCloud/index.html#secure"
+    },
+    {
+      "class_name": "Delivery Pipeline",
+      "doc_name": "Delivery Pipeline",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/DeliveryPipeline/index.html"
+    },
+    {
+      "class_name": "Dialog",
+      "doc_name": "Dialog",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/dialog/"
+    },
+    {
+      "class_name": "Document Generation",
+      "doc_name": "Document Generation",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/DocumentGeneration/index.html"
+    },
+    {
+      "class_name": "Document Conversion",
+      "doc_name": "Document Conversion",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/document-conversion/"
+    },
+    {
+      "class_name": "DreamFace",
+      "doc_name": "DreamFace",
+      "doc_link": "http://interactive-clouds.com/documentation/"
+    },
+    {
+      "class_name": "Driver Behavior",
+      "doc_name": "Driver Behavior",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/IotDriverInsights/index.html"
+    },
+    {
+      "class_name": "Digital Content Checker",
+      "doc_name": "Digital Content Checker, DCC",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/ecschecker/index.html"
+    },
+    {
+      "class_name": "Automated Accessibility Tester",
+      "doc_name": "Automated Accessibility Tester",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/ecsdashboard/index.html"
+    },
+    {
+      "class_name": "Elasticsearch by Compose",
+      "doc_name": "Elasticsearch",
+      "doc_link": "https://help.compose.com/docs/elasticsearch-on-compose"
+    },
+    {
+      "class_name": "ElephantSQL",
+      "doc_name": "ElephantSQL",
+      "doc_link": "https://www.elephantsql.com/docs/index.html"
+    },
+    {
+      "class_name": "flowthings.io",
+      "doc_name": "flowthings.io",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/flowthings/index.html"
+    },
+    {
+      "class_name": "Globalization Pipeline",
+      "doc_name": "Globalization Pipeline",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/GlobalizationPipeline/index.html"
+    },
+    {
+      "class_name": "Geospatial Analytics",
+      "doc_name": "Geospatial Analytics",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/geospatial/index.html#geospatial"
+    },
+    {
+      "class_name": "Globalization Pipeline BETA",
+      "doc_name": "Globalization Pipeline",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/GlobalizationPipeline/index.html"
+    },
+    {
+      "class_name": "Hiptest",
+      "doc_name": "Hiptest",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/hiptest/index.html"
+    },
+    {
+      "class_name": "IBM Graph",
+      "doc_name": "Graph",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/graphdb/index.html"
+    },
+    {
+      "class_name": "Blockchain",
+      "doc_name": "Blockchain",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/blockchain/index.html"
+    },
+    {
+      "class_name": "IoT for Electronics",
+      "doc_name": "IoT for Electronics",
+      "doc_link": "https://new-console.ng.bluemix.net/docs/services/IotElectronics/index.html"
+    },
+    {
+      "class_name": "IBM Identity Mixer",
+      "doc_name": "Identity Mixer",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/identitymixer/index.html"
+    },
+    {
+      "class_name": "Push Notifications",
+      "doc_name": "Push Notifications",
+      "doc_link": "https://console.ng.bluemix.net/docs/#services/mobilepush/index.html"
+    },
+    {
+      "class_name": "IoT Real-Time Insights",
+      "doc_name": "IoT Real-Time Insights, IRTI",
+      "doc_link": "http://www.ng.bluemix.net/docs/services/iotrtinsights/index.html"
+    },
+    {
+      "class_name": "IoT for Insurance",
+      "doc_name": "IoT for Insurance",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/IotInsurance/index.html"
+    },
+    {
+      "class_name": "Internet of Things Platform",
+      "doc_name": "Internet of Things Platform, IoT",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/IoT/index.html"
+    },
+    {
+      "class_name": "IoT for Automotive",
+      "doc_name": "IoT for Automotive",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/IoTAutomotive/index.html"
+    },
+    {
+      "class_name": "IQP IoT Code-Free App Development",
+      "doc_name": "IQP",
+      "doc_link": "http://www.info.iqpiot.com/Bluemix/"
+    },
+    {
+      "class_name": "jKool",
+      "doc_name": "jKool",
+      "doc_link": "https://www.jkoolcloud.com/support/jkool-on-ibm-bluemix"
+    },
+    {
+      "class_name": "Kinetise",
+      "doc_name": "Kinetise",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/Kinetise/index.html"
+    },
+    {
+      "class_name": "Language Translation",
+      "doc_name": "Language Translation",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/language-translation/"
+    },
+    {
+      "class_name": "Load Impact",
+      "doc_name": "Load Impact",
+      "doc_link": "http://support.loadimpact.com/"
+    },
+    {
+      "class_name": "Context Mapping",
+      "doc_name": "Context Mapping",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/IotMapInsights/index.html"
+    },
+    {
+      "class_name": "Message Hub",
+      "doc_name": "Message Hub",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/MessageHub/index.html"
+    },
+    {
+      "class_name": "Mobile Foundation",
+      "doc_name": "Mobile Foundation",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/mobilefoundation/index.html"
+    },
+    {
+      "class_name": "Mobile Quality Assurance",
+      "doc_name": "Mobile Quality Assurance, MQA",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/MobileQualityAssurance/index.html#MobileQualityAssurance"
+    },
+    {
+      "class_name": "Mobile Analytics",
+      "doc_name": "Mobile Analytics",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/mobileanalytics/index.html"
+    },
+    {
+      "class_name": "Mobile App Builder",
+      "doc_name": "Mobile App Builder, MAB",
+      "doc_link": "https://new-console.ng.bluemix.net/docs/services/mobileappbuilder/index.html"
+    },
+    {
+      "class_name": "Mobile Application Content Manager",
+      "doc_name": "Mobile Application Content Manager, MACM",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/macm/index.html"
+    },
+    {
+      "class_name": "Mobile Data",
+      "doc_name": "Mobile Data",
+      "doc_link": "https://console.ng.bluemix.net/docs/#services/mobiledata/index.html#gettingstarted"
+    },
+    {
+      "class_name": "MongoDB by Compose",
+      "doc_name": "MongoDB",
+      "doc_link": "https://help.compose.com/docs/mongodb-on-compose"
+    },
+    {
+      "class_name": "Moni.ai",
+      "doc_name": "Moni.ai",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/MoniAi/index.html"
+    },
+    {
+      "class_name": "Monitoring and Analytics",
+      "doc_name": "Monitoring and Analytics",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/monana/index.html#gettingstartedtemplate"
+    },
+    {
+      "class_name": "MQ Light",
+      "doc_name": "MQ Light, MQL",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/MQLight/index.html#mqlight010"
+    },
+    {
+      "class_name": "Namara.io Catalog",
+      "doc_name": "Namara.io",
+      "doc_link": "http://namara.io/#/api"
+    },
+    {
+      "class_name": "Natural Language Classifier",
+      "doc_name": "Natural Language Classifier, NLC",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/nl-classifier/"
+    },
+    {
+      "class_name": "New Relic",
+      "doc_name": "New Relic",
+      "doc_link": "http://docs.run.pivotal.io/marketplace/services/newrelic/"
+    },
+    {
+      "class_name": "Object Storage",
+      "doc_name": "Object Storage",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/ObjectStorage/index.html"
+    },
+    {
+      "class_name": "Payeezy",
+      "doc_name": "Payeezy",
+      "doc_link": "https://developer.payeezy.com/apis"
+    },
+    {
+      "class_name": "Personality Insights",
+      "doc_name": "Personality Insights",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/personality-insights/"
+    },
+    {
+      "class_name": "Predictive Analytics",
+      "doc_name": "Predictive Analytics",
+      "doc_link": "http://www.ng.bluemix.net/docs/#services/PredictiveModeling/index.html"
+    },
+    {
+      "class_name": "PostgreSQL by Compose",
+      "doc_name": "PostgreSQL",
+      "doc_link": "https://help.compose.com/docs/postgresql-on-compose"
+    },
+    {
+      "class_name": "PubNub",
+      "doc_name": "PubNub",
+      "doc_link": "http://www.pubnub.com/blog/getting-started-pubnub-ibm-bluemix/"
+    },
+    {
+      "class_name": "Push",
+      "doc_name": "Push",
+      "doc_link": "https://console.ng.bluemix.net/docs/#services/push/index.html#gettingstarted"
+    },
+    {
+      "class_name": "Redis by Compose",
+      "doc_name": "Redis",
+      "doc_link": "https://help.compose.com/docs/redis-on-compose"
+    },
+    {
+      "class_name": "Retrieve and Rank",
+      "doc_name": "Retrieve and Rank",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/retrieve-rank/"
+    },
+    {
+      "class_name": "Rocket Mainframe Data",
+      "doc_name": "Rocket Mainframe Data, RMD",
+      "doc_link": "http://www.rocketsoftware.com/rocket-mainframe-data-service/"
+    },
+    {
+      "class_name": "IBM Runbook Automation",
+      "doc_name": "Runbook Automation",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/RunbookAutomation/rba_getting_started_index.html"
+    },
+    {
+      "class_name": "Secure Gateway",
+      "doc_name": "Secure Gateway",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/SecureGateway/secure_gateway.html"
+    },
+    {
+      "class_name": "SendGrid",
+      "doc_name": "SendGrid",
+      "doc_link": "https://sendgrid.com/docs/index.html"
+    },
+    {
+      "class_name": "Service Discovery",
+      "doc_name": "Service Discovery",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/ServiceDiscovery/index.html"
+    },
+    {
+      "class_name": "Service Proxy",
+      "doc_name": "Service Proxy",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/ServiceProxy/index.html"
+    },
+    {
+      "class_name": "Session Cache",
+      "doc_name": "Session Cache",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/SessionCache/index.html#session_cache"
+    },
+    {
+      "class_name": "Simplicite aPaaS",
+      "doc_name": "Simplicite",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/simplicite/index.html"
+    },
+    {
+      "class_name": "Speech to Text",
+      "doc_name": "Speech to Text",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/speech-to-text/"
+    },
+    {
+      "class_name": "SQL Database",
+      "doc_name": "SQL",
+      "doc_link": "http://console.ng.bluemix.net/docs/#services/SQLDB/index.html"
+    },
+    {
+      "class_name": "Statica",
+      "doc_name": "Statica",
+      "doc_link": "http://support.statica.io/solution/articles/5000614144-ibm-bluemix"
+    },
+    {
+      "class_name": "Streaming Analytics",
+      "doc_name": "Streaming Analytics",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/StreamingAnalytics/index.html"
+    },
+    {
+      "class_name": "Testdroid Cloud",
+      "doc_name": "Testdroid Cloud",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/TestdroidCloud/index.html"
+    },
+    {
+      "class_name": "Text to Speech",
+      "doc_name": "Text to Speech",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/text-to-speech/"
+    },
+    {
+      "class_name": "TinyQueries",
+      "doc_name": "TinyQueries",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/TinyQueries/index.html"
+    },
+    {
+      "class_name": "Tone Analyzer",
+      "doc_name": "Tone Analyzer",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/tone-analyzer/"
+    },
+    {
+      "class_name": "Track & Plan",
+      "doc_name": "Track & Plan",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/TrackPlan/index.html"
+    },
+    {
+      "class_name": "Tradeoff Analytics",
+      "doc_name": "Tradeoff Analytics",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/tradeoff-analytics/"
+    },
+    {
+      "class_name": "Twilio",
+      "doc_name": "Twilio",
+      "doc_link": "http://www.twilio.com/docs"
+    },
+    {
+      "class_name": "Insights for Twitter",
+      "doc_name": "Insights for Twitter",
+      "doc_link": "https://console.ng.bluemix.net/docs/#services/Twitter/index.html"
+    },
+    {
+      "class_name": "Ustream",
+      "doc_name": "Ustream",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/ustream/index.html"
+    },
+    {
+      "class_name": "Virtual Private Network (VPN)",
+      "doc_name": "Virtual Private Network, VPN",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/vpn/index.html"
+    },
+    {
+      "class_name": "Visual Recognition",
+      "doc_name": "Visual Recognition",
+      "doc_link": "http://www.ibm.com/watson/developercloud/doc/visual-recognition/"
+    },
+    {
+      "class_name": "Weather Company Data for IBM Bluemix",
+      "doc_name": "Weather",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/Weather/index.html"
+    },
+    {
+      "class_name": "WebSphere Application Server",
+      "doc_name": "WebSphere, WAS",
+      "doc_link": "http://console.ng.bluemix.net/docs/services/ApplicationServeronCloud/index.html"
+    },
+    {
+      "class_name": "Workflow",
+      "doc_name": "Workflow",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/workflow/index.html#workflow"
+    },
+    {
+      "class_name": "Workload Scheduler",
+      "doc_name": "Workload Scheduler",
+      "doc_link": "http://console.ng.bluemix.net/docs/#services/WorkloadScheduler/index.html#gettingstarted"
+    },
+    {
+      "class_name": "XPages NoSQL Database",
+      "doc_name": "XPages",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/XPagesNoSQLDatabase/index.html"
+    },
+    {
+      "class_name": "IBM DataStage on Cloud",
+      "doc_name": "DataStage",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/DSOnCloud/index.html"
+    },
+    {
+      "class_name": "IBM Master Data Management on Cloud",
+      "doc_name": "Master Data Management, MDMC",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/MDMOnCloud/index.html"
+    },
+    {
+      "class_name": "BigInsights for Apache Hadoop",
+      "doc_name": "BigInsights",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/BigInsights/index.html"
+    },
+    {
+      "class_name": "box",
+      "doc_name": "box",
+      "doc_link": "https://developers.box.com/docs-overview/"
+    },
+    {
+      "class_name": "Content Delivery (CDN)",
+      "doc_name": "Content Delivery, CDN",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/cdn/index.html"
+    },
+    {
+      "class_name": "Deployment Risk Analytics",
+      "doc_name": "Deployment Risk Analytics, DRA",
+      "doc_link": "https://new-console.ng.bluemix.net/docs/services/DeploymentRiskAnalytics/index.html"
+    },
+    {
+      "class_name": "Integration Testing",
+      "doc_name": "Integration Testing",
+      "doc_link": "https://www.ng.bluemix.net/docs/#services/IntegrationTesting/index.html#gettingstartedtemplate"
+    },
+    {
+      "class_name": "Internet of Things Workbench",
+      "doc_name": "Workbench",
+      "doc_link": "https://console.ng.bluemix.net/docs/services/iotworkbench/index.html"
+    },
+    {
+      "class_name": "Message Connect",
+      "doc_name": "Message Connect",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/MessageConnect/index.html"
+    },
+    {
+      "class_name": "Single Sign On",
+      "doc_name": "Single Sign On, SSO",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/SingleSignOn/index.html#sso_gettingstarted"
+    },
+    {
+      "class_name": "Apache Spark",
+      "doc_name": "Apache Spark",
+      "doc_link": "https://www.ng.bluemix.net/docs/services/AnalyticsforApacheSpark/index.html"
+    }
+  ]
+}

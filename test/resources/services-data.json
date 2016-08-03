@@ -1,0 +1,29 @@
+{
+  "keyword_relevance_threshold": 70,
+  "concept_relevance_threshold": 70,
+  "blacklist": [
+    "blacklisted_service"
+  ],
+  "nlc_class_info": [
+    {
+      "class_name": "service0",
+      "doc_name": "service0",
+      "doc_link": "https://console.ng.bluemix.net/docs/service0"
+    },
+    {
+      "class_name": "service1",
+      "doc_name": "service1",
+      "doc_link": "https://console.ng.bluemix.net/docs/service1"
+    },
+    {
+      "class_name": "service2",
+      "doc_name": "service2",
+      "doc_link": "https://console.ng.bluemix.net/docs/service2"
+    },
+    {
+      "class_name": "service3",
+      "doc_name": "service3",
+      "doc_link": "https://console.ng.bluemix.net/docs/service3"
+    }
+  ]
+}

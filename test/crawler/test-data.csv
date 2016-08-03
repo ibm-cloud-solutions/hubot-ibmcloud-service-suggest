@@ -1,0 +1,129 @@
+help me find the best matching classes for a sentence or phrase,Natural Language Classifier
+submit a question and the service returns keys to the best matching answers or next actions for your application,Natural Language Classifier
+one or more correct classes for each question the user inputs,Natural Language Classifier
+helps me find the top matching categories with a probability values,Natural Language Classifier
+interprets the intent behind text to help me determine what the customer is asking for,Natural Language Classifier
+classification with associated confidence levels,Natural Language Classifier
+Tackle common questions that are typically handled by a live agent,Natural Language Classifier
+service that classifies SMS texts into predefined groups,Natural Language Classifier
+helps me classify tweets,Natural Language Classifier
+"products that classify into a set of classes, such as events or news",Natural Language Classifier
+# --------------------------------------------------------------------
+derives insights from a persons transactional and social media profile,Personality Insights
+identify psychological traits of potential employees,Personality Insights
+"determine purchase decisions, intent and behavioral traits",Personality Insights
+utilized to improve conversion rates and help bust sales of my products,Personality Insights
+extracts and analyzes a spectrum of personality attributes,Personality Insights
+help discover actionable insights about people and entities,Personality Insights
+guides end users to highly personalized interactions,Personality Insights
+help me understand my customer's personality characteristics,Personality Insights
+detailed personality portraits of multiple demographics,Personality Insights
+portraits of individual customers,Personality Insights
+help recruiters or university admissions match candidates to companies or universities,Personality Insights
+personality insights for college students,Personality Insights
+help understand who a persons background makes them more susceptible to committing crimes,Personality Insights
+# --------------------------------------------------------------------
+automatically respond to user questions about my product line,Dialog
+walk users through technical support process,Dialog
+hand-hold employees through difficult task that present multiple options,Dialog
+walk employees through the process of health insurance sign up,Dialog
+guide users through processes,Dialog
+Walk a user through the steps of signing up for health insurance,Dialog
+help users choose the best fit from a list of options,Dialog
+script conversations with virtual agent,Dialog
+allow to get help without a live operator,Dialog
+enable back and forth conversations,Dialog
+information gathering before being transfered to an agent,Dialog
+Walk users through my websites and provide links to help them answer the questions,Dialog
+talk to a user to help them take an action,Dialog
+allows users to chat with our application using natural language,Dialog
+# --------------------------------------------------------------------
+service that converts HTML documents into PDF,Document Conversion
+converts PDF documents into MS Word docs,Document Conversion
+converts service documents into plain text,Document Conversion
+enable developers to transform a document into a new format,Document Conversion
+prepare documents for use by other Watson APIs,Document Conversion
+clean up and normalize HTML,Document Conversion
+convert documents from one format to another,Document Conversion
+allows me to extract important information out of a document,Document Conversion
+# --------------------------------------------------------------------
+helps us to translate news articles from one language to another,Language Translation
+publish content in multiple languages,Language Translation
+allows articles written in one language to be published in multiple languages,Language Translation
+helps to identify which language a document is written in,Language Translation
+automatic translation between languages,Language Translation
+helps translate documents with terms specific to our domain,Language Translation
+Translates English to Spanish,Language Translation
+# --------------------------------------------------------------------
+Provides a search engine for my companies internal documents,Retrieve and Rank
+Helps find the most relevant information for a query,Retrieve and Rank
+Helps tech support team find documents to solve customer problems,Retrieve and Rank
+Ranks documents based on relevance of the users query,Retrieve and Rank
+Finds documents based on users question,Retrieve and Rank
+Helps agent find information to deal with an incoming customer issue,Retrieve and Rank
+# --------------------------------------------------------------------
+Help to convert human voice into text for processing by my backend application,Speech to Text
+Allow us to take spoken words and convert to plain text,Speech to Text
+To add voice control to our mobile application,Speech to Text
+Helps detect keywords when a person speaks,Speech to Text
+To capture transcript of our team meetings,Speech to Text
+Andriod API to record a persons voice and store into our database,Speech to Text
+Converts voice to text,Speech to Text
+Converts audio to text,Speech to Text
+Converts speech to text,Speech to Text
+# --------------------------------------------------------------------
+Helps your app speak to disabled users,Text to Speech
+Use sound to communicate with users on my website,Text to Speech
+communicate using the spoken word,Text to Speech
+transforms text to speech,Text to Speech
+Converts text to voice,Text to Speech
+Changes text to audio,Text to Speech
+Allows us to use text as input and plays speech to our end users,Text to Speech
+# --------------------------------------------------------------------
+Analyzes our web pages to help identify the sentiment of each articles,Tone Analyzer
+Identify tones in news articles such as joy or sadness,Tone Analyzer
+Detect the emotion of customers emailing our support group,Tone Analyzer
+Determine how a message might be perceived by the end user,Tone Analyzer
+Optimize the tones in our communication to ensure they come across okay,Tone Analyzer
+Determine a persons social tendencies based on popular websites such as facebook and twitter,Tone Analyzer
+Improve the effectiveness of the messages and how they are received,Tone Analyzer
+# --------------------------------------------------------------------
+make better choices while taking into account multiple goals,Tradeoff Analytics
+Help customers make complex decisions when presented several options,Tradeoff Analytics
+identify the optimal alternatives,Tradeoff Analytics
+Help us understand tradeoffs within the optimal set of alternatives,Tradeoff Analytics
+Identify the right option by considering multiple objectives,Tradeoff Analytics
+Tradeoff analytics,Tradeoff Analytics
+# --------------------------------------------------------------------
+A service that analysis text to help us understand the semantic information within emails,AlchemyAPI
+Extracts author information from news articles or blog posts,AlchemyAPI
+Identifies the overall emotional tone of a document or web page.,AlchemyAPI
+Determine what an articles is talking about.,AlchemyAPI
+Discover important content within a huge amount of emails.,AlchemyAPI
+Determine the attitude of blog post,AlchemyAPI
+Parse sentences into their various components,AlchemyAPI
+Helps me extract the subject of user provided text,AlchemyAPI
+understand the meaning of sentences and documents,AlchemyAPI
+analyze news articles and extract important information,AlchemyAPI
+Helps break down sentences into their grammatical constructs,AlchemyAPI
+# --------------------------------------------------------------------
+analyze photos and video,Visual Recognition
+understand the themes presented in a set of photos,Visual Recognition
+Summarize a set of photos in my customers instagram page,Visual Recognition
+Determine what pictures are about,Visual Recognition
+recognize objects in pictures,Visual Recognition
+recognize people in images,Visual Recognition
+identify faces in images,Visual Recognition
+identify people in images,Visual Recognition
+automatically identify subjects and objects contained within the image,Visual Recognition
+Help us understand what is in this image?,Visual Recognition
+understand and organize images based on their contents,Visual Recognition
+classify images based on it's content,Visual Recognition
+Identify if our products are being shown in our customers on-line images,Visual Recognition
+Identify if our products are being shown in our customers on-line pictures,Visual Recognition
+# --------------------------------------------------------------------
+helps to identify concepts in a users input,Concept Insights
+helps to understand the concepts presented on a website,Concept Insights
+helps us tag content based on the ideas presented,Concept Insights
+identify the idea of an article,Concept Insights
+identifies conceptual associations between documents,Concept Insights

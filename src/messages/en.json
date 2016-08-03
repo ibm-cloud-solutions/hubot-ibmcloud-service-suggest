@@ -1,0 +1,20 @@
+{
+    "help.suggest.list": "suggest list - list services the bot is able to suggest.",
+    "help.suggest.service": "suggest services [description of need] - suggest services that can help address your needs.",
+    "help.suggest.examples.header": "Usage examples:",
+    "help.suggest.example1": "suggest services to translate between languages.",
+    "help.suggest.example2": "suggest services that will recognize faces in photos.",
+    "help.suggest.example3": "suggest services to store data in the cloud.",
+    "suggest.service.field.url": "URL",
+    "suggest.list.no.services": "Bot is not trained to suggest any services.",
+    "suggest.list.services": "Bot is trained to suggest the following services:",
+    "suggest.nlc.not.configured": "Unable to complete the requested command because NLC is not properly configured.",
+    "suggest.nlc.error": "Encountered an error while communicating with NLC service.",
+    "suggest.nlc.internal.error": "Encountered internal error.",
+    "suggest.no.matches": "In the light of my current training, I find no services matching your needs.  Try to rephrase your description.",
+    "suggest.reply.0": "These should do the trick:",
+    "suggest.reply.1": "These might work for you:",
+    "suggest.reply.2": "The following services could match your needs:",
+    "suggest.reply.3": "These may fit your needs:",
+    "suggest.classifer.training": "I'm unable to suggest services at this time, because my NLC is still training.  Please try again later today."
+}
