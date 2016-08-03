@@ -343,8 +343,14 @@ var contributeRelations = function(page_data_object, class_data_obj) {
 }
 
 // combines all the process alchemy data into class_text, which is later used for generating the NLC training data file.
-var contributeClassText = function(class_data_obj) {
-  class_data_obj.class_text = _.concat(class_data_obj.processed_keywords, class_data_obj.processed_concepts, class_data_obj.processed_relations);
+var contributeClassText = function(class_data_obj, classElement) {
+  // If the classElement from service-data config has additional statements it wants to include for this class.
+  let additionalManualData = classElement && Array.isArray(classElement.additional_class_text) ?  classElement.additional_class_text : [];
+  if(additionalManualData.length) {
+    logger.info(`including manual training data for class: ${classElement.class_name}`);
+  }
+
+  class_data_obj.class_text = _.concat(class_data_obj.processed_keywords, class_data_obj.processed_concepts, class_data_obj.processed_relations, additionalManualData);
   class_data_obj.class_text = _.uniq(class_data_obj.class_text);
 
   class_data_obj.class_text = class_data_obj.class_text.filter((element)=>{
@@ -513,55 +519,76 @@ var processClassElement = function(classElement) {
     } else {
       logger.info(`processing class (${++processing_class_count} of ${processing_class_total}): ${classElement.class_name} ... - run elapsed time: ${humanizeDuration(new Date().getTime() - runStartTime.getTime())} `);
 
-      getAllPageDataForClass(classElement).then((all_pageData) => {
-        if(!all_pageData || !all_pageData.length) {
-          reject('no documents detected for class element: ' + JSON.stringify(classElement));
-        } else {
-          logger.info(`processing ${all_pageData.length} documents for class: ${classElement.class_name}`);
+      // Start by creating a data object for this class element.  Then gather data for each related doc.
+      var class_data_obj = {
+        class_name: classElement.class_name,
+        doc_name: classElement.doc_name || classElement.class_name,
+        class_text: [], // This is the input for NLC.  It's a combination of the below 'processed' fields with no duplicates.
+        processed_keywords: [],
+        processed_concepts: [],
+        processed_relations: [],
+        raw_data: []
+      };
 
-          // limit how many docs we process for each class element.  For test purposes only.
-          if(argv.doc_limit && all_pageData.length > argv.doc_limit) {
-            logger.info(`\tEnforcing doc limit of ${argv.doc_limit} per class.`);
-            all_pageData = all_pageData.slice(0, argv.doc_limit);
-          }
-
-          // Start by creating a data object for this class element.  Then gather data for each related doc.
-          var class_data_obj = {
-            class_name: classElement.class_name,
-            doc_name: classElement.doc_name || classElement.class_name,
-            class_text: [], // This is the input for NLC.  It's a combination of the below 'processed' fields with no duplicates.
-            processed_keywords: [],
-            processed_concepts: [],
-            processed_relations: [],
-            raw_data: []
-          };
+      if(classElement.class_text) {
+        // this class has been manually trained, so just use the training data from service-data file.
+        try {
+          logger.info(`using manual training data for class: ${classElement.class_name}`);
+          class_data_obj.class_text = classElement.class_text;
 
           if(!argv.output_freq) {
             // only needed if we aren't capturing partial output as classes are processed.
             class_data_objs.push(class_data_obj);
           }
 
-          var docPromises = [];
-          all_pageData.forEach((pageData) => {
-            docPromises.push(processClassDocument(pageData, class_data_obj));
-          });
-
-          Promise.all(docPromises).then(() => {
-            // All docs for this class element have been processed.  Now contribute the NLC text for this class
-            // and capture incremental output if enabled.
-            contributeClassText(class_data_obj);
-            return capturePartialOutput(class_data_obj);
-          }).then(() => {
-            // This class element has been completely processed.
-            logger.info(`Alchemy cache stats.  size: ${cache_alchemyOutput.count()} hits: ${cache_stats.hits} misses: ${cache_stats.misses}`);
+          capturePartialOutput(class_data_obj).then(() => {
             resolve();
-          }).catch((error)=> {
+          }).catch((error) => {
             reject(error);
           });
+        } catch(error) {
+          reject(error);
         }
-      }).catch((error)=> {
-        reject(error);
-      });
+      } else {
+        getAllPageDataForClass(classElement).then((all_pageData) => {
+          if(!all_pageData || !all_pageData.length) {
+            reject('no documents detected for class element: ' + JSON.stringify(classElement));
+          } else {
+            logger.info(`processing ${all_pageData.length} documents for class: ${classElement.class_name}`);
+
+            // limit how many docs we process for each class element.  For test purposes only.
+            if(argv.doc_limit && all_pageData.length > argv.doc_limit) {
+              logger.info(`\tEnforcing doc limit of ${argv.doc_limit} per class.`);
+              all_pageData = all_pageData.slice(0, argv.doc_limit);
+            }
+
+            if(!argv.output_freq) {
+              // only needed if we aren't capturing partial output as classes are processed.
+              class_data_objs.push(class_data_obj);
+            }
+
+            var docPromises = [];
+            all_pageData.forEach((pageData) => {
+              docPromises.push(processClassDocument(pageData, class_data_obj));
+            });
+
+            Promise.all(docPromises).then(() => {
+              // All docs for this class element have been processed.  Now contribute the NLC text for this class
+              // and capture incremental output if enabled.
+              contributeClassText(class_data_obj, classElement);
+              return capturePartialOutput(class_data_obj);
+            }).then(() => {
+              // This class element has been completely processed.
+              logger.info(`Alchemy cache stats.  size: ${cache_alchemyOutput.count()} hits: ${cache_stats.hits} misses: ${cache_stats.misses}`);
+              resolve();
+            }).catch((error)=> {
+              reject(error);
+            });
+          }
+        }).catch((error)=> {
+          reject(error);
+        });
+      }
     }
   });
 }
