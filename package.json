@@ -47,6 +47,10 @@
     "hubot": "^2.19.0"
   },
   "devDependencies": {
+    "hubot-ibmcloud-auth": ">=0.0.8",
+    "hubot-ibmcloud-nlc": ">=0.0.20",
+    "hubot-ibmcloud-formatter": ">=0.0.29",
+    "hubot-cf-convenience": ">=0.0.7",
     "eslint": "^2.9.0",
     "chai": "^3.5.0",
     "hubot-test-helper": "^1.4.4",
