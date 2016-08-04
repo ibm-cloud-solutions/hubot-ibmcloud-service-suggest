@@ -4,7 +4,7 @@
 	"classes":[
 		{
 			"class": "bluemix.suggest.help",
-			"description": "Help with service suggest",
+			"description": "Help with Bluemix service suggest",
 			"emittarget": "bluemix.suggest.help",
 			"texts": [
 				"help me with services suggestions.",
@@ -14,7 +14,7 @@
 		},
 		{
 			"class": "bluemix.suggest.list",
-			"description": "List services trained for suggestion",
+			"description": "List Bluemix services trained for suggestion",
 			"emittarget": "bluemix.suggest.list",
 			"texts": [
 				"Which bluemix services can you suggest for?",
@@ -24,7 +24,7 @@
 		},
 		{
 			"class": "bluemix.suggest.service",
-			"description": "Suggest a service",
+			"description": "Suggest a Bluemix service",
 			"emittarget": "bluemix.suggest.service",
 			"texts": [
 				"Suggest services to classify SMS messages or text",
