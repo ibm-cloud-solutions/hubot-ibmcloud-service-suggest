@@ -4,38 +4,41 @@
 	"classes":[
 		{
 			"class": "bluemix.suggest.help",
-	  		"emittarget": "bluemix.suggest.help",
-	  		"texts": [
+			"description": "Help with service suggest",
+			"emittarget": "bluemix.suggest.help",
+			"texts": [
 				"help me with services suggestions.",
 				"Can you recommend bluemix services?",
 				"Need help with services recommendations."
-	  		]
-  		},
-  		{
-	  		"class": "bluemix.suggest.list",
-	  		"emittarget": "bluemix.suggest.list",
-	  		"texts": [
+			]
+		},
+		{
+			"class": "bluemix.suggest.list",
+			"description": "List services trained for suggestion",
+			"emittarget": "bluemix.suggest.list",
+			"texts": [
 				"Which bluemix services can you suggest for?",
 				"List all services you can suggest",
 				"Show me all services you can recommend"
-  			]
-  		},
+			]
+		},
 		{
-		   "class": "bluemix.suggest.service",
-		   "emittarget": "bluemix.suggest.service",
-		   "texts": [
-			 "Suggest services to classify SMS messages or text",
-			 "Recommend services to integrate weather data into my app",
-			 "Show me services that can be used for analytics",
-			 "Recommend services that can be added to my mobile app",
-			 "Suggest a service that can be used for data caching.",
-			 "Recommend a service that can manage deployments on the cloud",
-			 "Which services can I use to integrate with Watson?",
-			 "Find services that host databases on the cloud.",
-			 "Suggest services for online banking.",
-			 "What service can I use for translating languages?",
-			 "I'm looking for Bluemix services that help me manage my DevOps"
-		   ]
-	   }
-   ]
+			"class": "bluemix.suggest.service",
+			"description": "Suggest a service",
+			"emittarget": "bluemix.suggest.service",
+			"texts": [
+				"Suggest services to classify SMS messages or text",
+				"Recommend services to integrate weather data into my app",
+				"Show me services that can be used for analytics",
+				"Recommend services that can be added to my mobile app",
+				"Suggest a service that can be used for data caching.",
+				"Recommend a service that can manage deployments on the cloud",
+				"Which services can I use to integrate with Watson?",
+				"Find services that host databases on the cloud.",
+				"Suggest services for online banking.",
+				"What service can I use for translating languages?",
+				"I'm looking for Bluemix services that help me manage my DevOps"
+			]
+		}
+	]
 }
