@@ -323,11 +323,6 @@
       "doc_link": "https://console.ng.bluemix.net/docs/#services/mobilepush/index.html"
     },
     {
-      "class_name": "IoT Real-Time Insights",
-      "doc_name": "IoT Real-Time Insights, IRTI",
-      "doc_link": "http://www.ng.bluemix.net/docs/services/iotrtinsights/index.html"
-    },
-    {
       "class_name": "IoT for Insurance",
       "doc_name": "IoT for Insurance",
       "doc_link": "https://console.ng.bluemix.net/docs/services/IotInsurance/index.html"
@@ -418,11 +413,6 @@
       "class_name": "Mobile Application Content Manager",
       "doc_name": "Mobile Application Content Manager, MACM",
       "doc_link": "https://www.ng.bluemix.net/docs/services/macm/index.html"
-    },
-    {
-      "class_name": "Mobile Data",
-      "doc_name": "Mobile Data",
-      "doc_link": "https://console.ng.bluemix.net/docs/#services/mobiledata/index.html#gettingstarted"
     },
     {
       "class_name": "MongoDB by Compose",
@@ -536,11 +526,6 @@
       "doc_link": "http://www.pubnub.com/blog/getting-started-pubnub-ibm-bluemix/"
     },
     {
-      "class_name": "Push",
-      "doc_name": "Push",
-      "doc_link": "https://console.ng.bluemix.net/docs/#services/push/index.html#gettingstarted"
-    },
-    {
       "class_name": "Redis by Compose",
       "doc_name": "Redis",
       "doc_link": "https://help.compose.com/docs/redis-on-compose"
@@ -611,7 +596,7 @@
     },
     {
       "class_name": "Simplicite aPaaS",
-      "doc_name": "Simplicite",
+      "doc_name": "Simplicite, Simplicité",
       "doc_link": "https://console.ng.bluemix.net/docs/services/simplicite/index.html"
     },
     {

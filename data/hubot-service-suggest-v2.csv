@@ -4767,135 +4767,6 @@ The Push Notifications supports development of Cordova-based iOS and Android app
 Enable Cordova applications to receive push notifications and send push notifications to your devices.,Push Notifications
 Services like the Push Notifications Service are configured to the App ID.,Push Notifications
 The CSR contains information that identifies your company and your public and private key that you use to sign your Apple push notifications.,Push Notifications
-IoT Real-Time Insights,IoT Real-Time Insights
-Cloud Foundry Applications,IoT Real-Time Insights
-IBM Master Data,IoT Real-Time Insights
-IoT Code-Free App,IoT Real-Time Insights
-IBM Bluemix,IoT Real-Time Insights
-Deployment Risk Analytics,IoT Real-Time Insights
-IBM Virtual Servers,IoT Real-Time Insights
-Bluemix user interface,IoT Real-Time Insights
-Bluemix Mobile dashboard,IoT Real-Time Insights
-IBM Runbook Automation,IoT Real-Time Insights
-IBM Alert Notification,IoT Real-Time Insights
-Mobile Client Access,IoT Real-Time Insights
-Cloudant NoSQL DB,IoT Real-Time Insights
-Weather Company Data,IoT Real-Time Insights
-command line interface,IoT Real-Time Insights
-Mobile App Builder,IoT Real-Time Insights
-Mobile Quality Assurance,IoT Real-Time Insights
-Virtual Private Network,IoT Real-Time Insights
-Mobile Analytics,IoT Real-Time Insights
-Rocket Mainframe Data,IoT Real-Time Insights
-Application Content Manager,IoT Real-Time Insights
-Globalization Pipeline BETA,IoT Real-Time Insights
-Adaptive Security Manager,IoT Real-Time Insights
-Geospatial Analytics,IoT Real-Time Insights
-Digital Content Checker,IoT Real-Time Insights
-Predictive Analytics,IoT Real-Time Insights
-Travel Boundary Service,IoT Real-Time Insights
-Testdroid Cloud,IoT Real-Time Insights
-Tradeoff Analytics,IoT Real-Time Insights
-new Bluemix,IoT Real-Time Insights
-service,IoT Real-Time Insights
-IBM DataWorks Lift,IoT Real-Time Insights
-Bluemix,IoT Real-Time Insights
-WebSphere Application Server,IoT Real-Time Insights
-master data management,IoT Real-Time Insights
-experimental service,IoT Real-Time Insights
-IBM Watson IoT,IoT Real-Time Insights
-Driver Behavior,IoT Real-Time Insights
-App Builder service,IoT Real-Time Insights
-new IBM IoT,IoT Real-Time Insights
-IoT Driver Behavior,IoT Real-Time Insights
-Watson IoT Driver,IoT Real-Time Insights
-ibm vpn service,IoT Real-Time Insights
-ibm cloud data,IoT Real-Time Insights
-Watson IoT Platform,IoT Real-Time Insights
-IoT Platform message,IoT Real-Time Insights
-action,IoT Real-Time Insights
-service engineer,IoT Real-Time Insights
-variable substitution,IoT Real-Time Insights
-alerts dashboard,IoT Real-Time Insights
-data points,IoT Real-Time Insights
-dashboard,IoT Real-Time Insights
-data point,IoT Real-Time Insights
-device,IoT Real-Time Insights
-dashboards,IoT Real-Time Insights
-device dashboard,IoT Real-Time Insights
-device alerts dashboard,IoT Real-Time Insights
-gauge N/A Integer/Float,IoT Real-Time Insights
-Add new dashboard,IoT Real-Time Insights
-device dashboards,IoT Real-Time Insights
-device dashboard layout,IoT Real-Time Insights
-Additional device information,IoT Real-Time Insights
-initial dashboard widget,IoT Real-Time Insights
-rule,IoT Real-Time Insights
-conditional trigger,IoT Real-Time Insights
-Data management,IoT Real-Time Insights
-SQL,IoT Real-Time Insights
-Business intelligence,IoT Real-Time Insights
-MySQL,IoT Real-Time Insights
-Mobile computing,IoT Real-Time Insights
-IBM DB2,IoT Real-Time Insights
-Device,IoT Real-Time Insights
-Following,IoT Real-Time Insights
-Input device,IoT Real-Time Insights
-Christopher Nolan,IoT Real-Time Insights
-JSON,IoT Real-Time Insights
-Documentation,IoT Real-Time Insights
-Specification,IoT Real-Time Insights
-Streaming media,IoT Real-Time Insights
-Data,IoT Real-Time Insights
-Dashboard,IoT Real-Time Insights
-Real-time computing,IoT Real-Time Insights
-Asset,IoT Real-Time Insights
-Capital asset,IoT Real-Time Insights
-Better,IoT Real-Time Insights
-User,IoT Real-Time Insights
-Login,IoT Real-Time Insights
-E-mail address,IoT Real-Time Insights
-Text messaging,IoT Real-Time Insights
-Mobile phone,IoT Real-Time Insights
-SMS,IoT Real-Time Insights
-Instant messaging,IoT Real-Time Insights
-E-mail,IoT Real-Time Insights
-Domain Name System,IoT Real-Time Insights
-Data type,IoT Real-Time Insights
-Pointer,IoT Real-Time Insights
-Data types,IoT Real-Time Insights
-Internet,IoT Real-Time Insights
-Linux,IoT Real-Time Insights
-Widget engine,IoT Real-Time Insights
-Datapoint,IoT Real-Time Insights
-Latitude,IoT Real-Time Insights
-Graphical user interface,IoT Real-Time Insights
-Widget toolkit,IoT Real-Time Insights
-Time,IoT Real-Time Insights
-C,IoT Real-Time Insights
-"Now that you have deployed IoT Real-Time Insights and dependent services and connected some devices, you can start using the product by creating some analytics rules, customizing your console environment, and by adding users and mapping assets.",IoT Real-Time Insights
-IoT Real-Time Insights supports nested JSON message payloads that meet the Watson IoT Platform specification.,IoT Real-Time Insights
-"IoT Real-Time Insights provides a real-time analytics engine and analytics authoring capability that enables the contextualization and monitoring of IoT device data, speeds understanding of current conditions, and improves decision-making and responses to emerging issues.",IoT Real-Time Insights
-"IoT Real-Time Insights uses a simple rules-based composition model and an extensible framework to help you leverage Internet of Things data, combine it with master asset data, analyze situations in context, and automate responses to improve operations, availability, and service levels.",IoT Real-Time Insights
-IoT Real-Time Insights connects to the Bluemix Internet of Things (Watson IoT Platform) service for real-time device data feeds.,IoT Real-Time Insights
-"Designed for team collaboration, IoT Real-Time Insights allows administrators to add more users to access the IoT Real-Time Insights console.",IoT Real-Time Insights
-Operators log in directly to the IoT Real-Time Insights console to monitor the real-time data flow of their devices and groups of devices.,IoT Real-Time Insights
-The owner role is assigned to the IBM ID that deployed the IoT Real-Time Insights service instance in Bluemix.,IoT Real-Time Insights
-Add the user to IoT Real-Time Insights.,IoT Real-Time Insights
-"{""text"":""*A device needs your attention*\n Time: {{timestamp}}\n IoT Real-Time Insights instance: {{tenantId}}\n Device: {{deviceId}}\n Rule: {{ruleName}}\n Description: {{ruleDescription}}\n Condition: {{ruleCondition}}\n Raw device message: \n{{message}}""}",IoT Real-Time Insights
-"In addition to displaying alerts in the alerts dashboard, IoT Real-Time Insights supports several types of rule-triggered actions, such as sending emails and sending webhooks.",IoT Real-Time Insights
-IoT Real-Time Insights uses Watson IoT Platform for device access and data retrieval.,IoT Real-Time Insights
-Devices that you connect to Watson IoT Platform are automatically connected to IoT Real-Time Insights.,IoT Real-Time Insights
-"First, you add the device to Watson IoT Platform, and then you configure how IoT Real-Time Insights consumes and displays the device data.",IoT Real-Time Insights
-"With IBM Watson IoT Platform Analytics Real-Time Insights on Bluemix (IoT Real-Time Insights), you can perform analytics on real-time data from your Internet of Things devices, and gain insights about their health and the overall state of your operations.",IoT Real-Time Insights
-Before you can start using IoT Real-Time Insights you must set up the IBM Watson IoT Platform service (Watson IoT Platform) to connect your analytics engine to your devices.,IoT Real-Time Insights
-"On the IoT Real-Time Insights page, verify the Add Service selections:",IoT Real-Time Insights
-This name is displayed in the IoT IoT Real-Time Insights tile in the Bluemix dashboard.,IoT Real-Time Insights
-Optional: Use your phone as an IoT device with IoT IoT Real-Time Insights.,IoT Real-Time Insights
-"Use the Internet of Things phone application to quickly set up your smart phone to act as an IoT device that you can use to verify your IoT Real-Time Insights environment and begin to define real-time analytics on the data.For more information about the Internet of Things Phone application, see the Internet of Things phone application project.",IoT Real-Time Insights
-"In addition to manually created dashboards, IoT Real-Time Insights comes with a predefined device alerts dashboard at Dashboards > Overview and dynamically creates device dashboards based on the message schemas that you create.",IoT Real-Time Insights
-Also select whether to make this dashboard editable to IoT Real-Time Insights operator users.,IoT Real-Time Insights
-"Note: When you use a free plan instances of IoT Real-Time Insights, all rules are automatically deactivated after one hour.",IoT Real-Time Insights
 policy holder,IoT for Insurance
 personalized risk assessment,IoT for Insurance
 Contact Bluemix Sales,IoT for Insurance
@@ -6942,32 +6813,6 @@ The IBM Bluemix dashboard for Mobile Application Content Manager provides docume
 "The Mobile Application Content Manager Bluemix dashboard has a GET STARTED link, a link to LAUNCH the Mobile Application Content Manager, and a DISCOVER link to get expert help.",Mobile Application Content Manager
 IBM Mobile Application Content Manager for Bluemix includes a REST API to allow hybrid mobile applications to use the content from the Mobile Application Content Manager.,Mobile Application Content Manager
 Software Development Kits (SDKs) are provided for Android and iOS to allow mobile applications to use the content from the Mobile Application Content Manager.,Mobile Application Content Manager
-Mobile Cloud,Mobile Data
-Mobile Cloud application,Mobile Data
-mobile cloud services,Mobile Data
-Mobile Data,Mobile Data
-Mobile Quality Assurance,Mobile Data
-Cloud computing,Mobile Data
-Google,Mobile Data
-Personal digital assistant,Mobile Data
-Smartphone,Mobile Data
-JSON,Mobile Data
-Subroutine,Mobile Data
-Data type,Mobile Data
-Object-oriented programming,Mobile Data
-Type system,Mobile Data
-Metaobject,Mobile Data
-"The Mobile Cloud boilerplate includes the Mobile Data, Mobile Application Security, Mobile Quality Assurance, and Push services and a Node.js runtime.",Mobile Data
-"Your mobile application is given access to mobile services: Mobile Application Security, Push, and Mobile Data.",Mobile Data
-"Mobile Data: Mobile Data is a cloud storage service with an SDK that you can use for storing data, while hiding the management and implementation of the data store.",Mobile Data
-You can define objects with classes in the Mobile Data APIs.,Mobile Data
-Migrating Mobile Data to Cloudant NoSQL DB,Mobile Data
-"If you are using the Mobile Data service in your app, consider migrating to the Cloudant NoSQL DB service.",Mobile Data
-The Mobile Data service is no longer in the Bluemix catalog.,Mobile Data
-Migrating your mobile applications from Mobile Data service to Cloudant NoSQL DB will allow you to use the full array of Cloudant features that were not available the Mobile Data service.,Mobile Data
-"To migrate your mobile applications from the Mobile Data service to the Cloudant NoSQL DB service, you can create an instance of a Cloudant NoSQL DB service or use an existing instance.",Mobile Data
-Remove Mobile Data API calls from your app.,Mobile Data
-"With Mobile Data, you can store, delete, update, and query objects that are stored in the cloud.",Mobile Data
 Compose,MongoDB by Compose
 MongoDB,MongoDB by Compose
 Compose MongoDB,MongoDB by Compose
@@ -9014,143 +8859,6 @@ Documentation shall mean the documentation available on PubNubs website that des
 Message is a PubNub message that is sent or received through the PubNub Services.,PubNub
 "For example, a Message sent by one PubNub client to another PubNub client is counted as two messages (one sender and one receiver).",PubNub
 "Messages are also generated by the use of PubNub Presence, Storage & Playback, and PubNub Realtime Analytics services.",PubNub
-List Operations,Push
-IBM Push Notifications,Push
-push notifications,Push
-client Push SDK,Push
-basic push notifications,Push
-Mobile Cloud,Push
-Mobile Cloud application,Push
-mobile cloud services,Push
-Mobile Data,Push
-Mobile Quality Assurance,Push
-Push Notifications service,Push
-mobile push notifications,Push
-App Distribution Guide,Push
-iOS App Store,Push
-tvOS App Store,Push
-Mac App Store,Push
-App Distribution Quick,Push
-deprecation notice,Push
-Adding deprecation notice,Push
-project.json initial commit,Push
-IBM Bluemix Mobile,Push
-DevOps Services,Push
-Push Notification Service,Push
-Push Notifications Dashboard,Push
-IBM Push Notification,Push
-push,Push
-push sdk.,Push
-push directory,Push
-SDK Android Push,Push
-Bluemix Push dashboard,Push
-push notification service,Push
-helloPush sample,Push
-device,Push
-device token,Push
-APNs,Push
-notification,Push
-push notifications service,Push
-Device,Push
-Push e-mail,Push
-Representational State Transfer,Push
-Apple Push Notification Service,Push
-Application software,Push
-Emulator,Push
-Computer software,Push
-Computer program,Push
-Following,Push
-Mobile River,Push
-System software,Push
-Mobile Web,Push
-Mobile computing,Push
-Client-server,Push
-Cloud computing,Push
-Google,Push
-Personal digital assistant,Push
-Smartphone,Push
-Mobile software,Push
-Java,Push
-IPhone OS,Push
-Transport Layer Security,Push
-App Store,Push
-Apple Inc.,Push
-HTML,Push
-Windows Update,Push
-Concurrent Versions System,Push
-Sample,Push
-Deprecation,Push
-Front-end and back-end,Push
-Application programming interface,Push
-File system,Push
-Android,Push
-Certificate authority,Push
-messages : Push Messages,Push
-Enabling Android applications to receive push notifications,Push
-Enable Android applications to receive push notifications and send push notifications to your devices.,Push
-Installing the client Push SDK with Gradle,Push
-This section describes how to install and use the client Push SDK to further develop your Android applications.,Push
-Bluemix mobile services Push SDK can be added using Gradle.,Push
-The following lines add the Bluemix Mobile services Push client SDK and the Google play services SDK to your compile scope dependencies.,Push
-Initializing the Push SDK for Android apps,Push
-"The Mobile Cloud boilerplate includes the Mobile Data, Mobile Application Security, Mobile Quality Assurance, and Push services and a Node.js runtime.",Push
-"Your mobile application is given access to mobile services: Mobile Application Security, Push, and Mobile Data.",Push
-Push: Use Push in your enterprise applications to send relevant content to the right people at the right place and time.,Push
-The Push Notifications service provides a unified platform to send and manage mobile push notifications that are targeted to iOS and Android platforms.,Push
-"This service manages the mapping of your application users to their devices, device platform, and handles dispatching push notifications to them.",Push
-"With this service, you can send broadcasts, unicasts, (based on deviceID), and also tags (or topics) push notifications to your mobile application users.",Push
-This section describes how to set up basic push notifications.,Push
-"For details on obtaining an Apple Push Notification service (APNs) certificate that works in both environments, read Creating a Universal Push Notification Client SSL Certificate in App Distribution Guide.",Push
-"For how to enable APNs, read Configuring Push Notifications in App Distribution Guide.",Push
-quickstart-push-android Updating Gradle build tools to 1.2.3 for consistency a year ago,Push
-quickstart-push-iOS Adding Podfile.lock Updates a year ago,Push
-"There are 2 folders, one each for Android and iOS which contains the Sample application on how to use the Push Service",Push
-Latest commit ff53a31 2 days ago @drcariel drcariel committed on GitHub Adding note for new push init requirements,Push
-helloPush Push init api change to include ID 4 days ago,Push
-This Android helloPush sample contains an Android project that you can use to learn more about the IBM Push Notification Service.,Push
-Note: You'll need the project number (Sender ID) and API key to configure your credentials on the Bluemix Push Notification Dashboard.,Push
-"Before you can run the helloPush application, you must set up an app on Bluemix.",Push
-"The Cloudant NoSQL DB, Push Notifications, and Mobile Client Access services are added to the app.",Push
-"In Android Studio, open the helloPush Android project.",Push
-"Lastly, add the App GUID located in your Push Notifications Dashboard (Configuration --> Mobile Options) to your push.init function:",Push
-"Note: Newer versions the Push Notifications service have their own unique AppGUID, so you may be entering different values for each init (Push client sdk vs BMSClient).",Push
-Push notifications SDK for Bluemix Mobile Services,Push
-bms-clientsdk-android-push.iml temp - relative path reference for libs to fix push sdk build 11 months ago,Push
-gradle.properties cleanup - restructure push sdk. remove push directory 11 months ago,Push
-gradlew cleanup - restructure push sdk. remove push directory 11 months ago,Push
-gradlew.bat cleanup - restructure push sdk. remove push directory 11 months ago,Push
-push.iml cleanup - restructure push sdk. remove push directory 11 months ago,Push
-settings.gradle cleanup - restructure push sdk. remove push directory 11 months ago,Push
-This is the push component of Android SDK for IBM Bluemix Mobile Services. https://console.ng.bluemix.net/solutions/mobilefirst,Push
-This package contains the push components of Android SDK.,Push
-helloPush_objective_c Fixing comment 8 months ago,Push
-iOS helloPush Sample Application for Bluemix Mobile Services,Push
-This iOS helloPush sample contains an Objective-C project that you can use to learn more about the IBM Push Notification Service.,Push
-APNs enabled push certificate (.p12 file) and the certificate password for your sandbox environment.,Push
-"The CloudantNoSQL DB, IBM Push Notifications, and Mobile Client Access services are then added to the app.",Push
-"In the Apple Push Certificate section, select the Sandbox environment",Push
-"Upload a valid APNs enabled push certificate (.p12 file), then enter the password associated with the certificate.",Push
-"In a terminal, navigate to the bms-samples-ios-hellopush directory where the project was cloned",Push
-Apple Push Notification service (APNs) is the centerpiece of the remote notifications feature.,Push
-Apple Push Notification service transports and routes remote notifications for your apps from your provider to each users device.,Push
-Figure 3-1Pushing a remote notification from a provider to a client app,Push
-Migrating to the Push Notifications service from the deprecated Push Service,Push
-This Push service is deprecated: You can migrate to the Push Notifications service for the latest mobile push capabilities on Bluemix.,Push
-"With this service, you can use mobile SDKs and the Push REST API to quickly add push notification capability to your applications.",Push
-The Push provides the latest mobile push capabilities on Bluemix.,Push
-"For building mobile client applications, the Push Notifications service has platform-specific SDKs for iOS, Android, and Cordova.",Push
-"To map Push Notifications service to existing subscriptions, you need to first use the REST APIs of the deprecated Push service to obtain subscriptions for a device, and then use the REST API of Push Notifications service to create these subscriptions for devices registered with the Push Notification service.",Push
-"To migrate from the deprecated Push service to the Push Notifications service, do the following:",Push
-"Try using the Push Notifications service, including the REST APIs, SDKs, and dashboard.",Push
-"When you are ready, bind the new Push Notifications service to your existing mobile backend.",Push
-Create an instance of IBM Push Notifications and bind it to your existing backend application on Bluemix.,Push
-"For example, the application that used to bind the old Push service.",Push
-Migrate your mobile applications to use the IBM Push Notifications Service SDKs.,Push
-The sample push application for Android is available here.,Push
-The sample push application using the Objective-C is available here.,Push
-The SDK changes in IBM Push Notifications SDK from the Push Service SDK are as below.,Push
-Push SDK Initialization IBMPush push = IBMPush.initializeService();,Push
-"You can use the Push to send relevant content to mobile devices, including iOS and Android platforms.",Push
 Compose Redis Deployments,Redis by Compose
 Compose,Redis by Compose
 Compose Platform FAQ,Redis by Compose
@@ -12983,3 +12691,28 @@ Analytics for Apache Spark leverages the powerful big data processing and analyt
 "Restriction: To use R in a notebook, you must create a new Analytics for Apache Spark service instance that uses Spark Release 1.6.0.",Apache Spark
 You can associate a notebook with another Analytics for Apache Spark instance in your IBM Bluemix organization.,Apache Spark
 Important: Only one Object Storage instance can be associated with a Analytics for Apache Spark service instance.,Apache Spark
+authenticated server-side calls,Simplicite aPaaS
+non authenticated client-side,Simplicite aPaaS
+Simplicité backend instance,Simplicite aPaaS
+DevOps Services,Simplicite aPaaS
+Simplicité Node.js library,Simplicite aPaaS
+Simplicité AJAX library,Simplicite aPaaS
+Simplicité Node.js API,Simplicite aPaaS
+REST web services,Simplicite aPaaS
+instance base URL,Simplicite aPaaS
+service instance,Simplicite aPaaS
+service instance base,Simplicite aPaaS
+webservices API,Simplicite aPaaS
+Web service,Simplicite aPaaS
+Software architecture,Simplicite aPaaS
+Application programming interface,Simplicite aPaaS
+Java,Simplicite aPaaS
+Interface,Simplicite aPaaS
+User interface,Simplicite aPaaS
+This project is a web frontend demo written in Node.js using the REST web services of a Simplicité backend instance (directly and thru the Simplicité Node.js API).,Simplicite aPaaS
+The /demo index page uses the Simplicité AJAX library (non authenticated client-side calls) The /user and the /products page uses the Simplicité Node.js library (authenticated server-side calls),Simplicite aPaaS
+Demo Node.js web frontend app using Simplicité(R) Ajax API,Simplicite aPaaS
+Simplicité is a versatile backend enterprise application platform designed to satisfy your custom business requirements using web-based business model configuration.,Simplicite aPaaS
+"The typical usage is when you want to develop a custom frontend application (using Java, PHP, Node.js, ...) that exposes your business implemented on a Simplicité instance using its APIs.",Simplicite aPaaS
+To deploy a service you can use the Bluemix console: go to the service catalog > Web and applications section and click on the Simplicité service and follow the instructions.,Simplicite aPaaS
+"Once you have configured your business users, you can start calling the webservices API (REST/SOAP/RAW) from your frontend applications that have been bound to the Simplicité service.",Simplicite aPaaS

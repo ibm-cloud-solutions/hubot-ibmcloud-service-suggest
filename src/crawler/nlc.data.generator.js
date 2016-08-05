@@ -158,13 +158,13 @@ logger.info('config parm: relations_require_service_name = ' + config_obj.relati
 
 // **** If you are reading me, go to the bottom of this file and work your way back up ;)
 
-// removes any ASCII chars above 127, such as special chars/symbols (e.g. trade mark sign).
+// removes any ASCII chars between 128-191 (special chars/symbols not used in words)
 var stripSpecial = function(str) {
   if(!str) {
     return str;
   }
 
-  return str.replace(/[^\x00-\x7F]+/g, '');
+  return str.replace(/[^\x00-\x7F\xC0-\xFF]+/g, '');
 }
 
 // true if string1 contains string2, ignores case and special ASCII chars.
@@ -268,18 +268,18 @@ var capturePartialOutput = function (class_data_obj, flush) {
 
   try {
     let doWrite = false;
-    
+
     if(class_data_obj) {
       temp_class_data_objs.push(class_data_obj);
       doWrite = temp_class_data_objs.length === argv.output_freq;
     } else if(flush === true && temp_class_data_objs.length) {
       doWrite = true;
     }
-    
+
     if (doWrite) {
       let write_class_data_objects = temp_class_data_objs;
       temp_class_data_objs = [];
-      
+
       if (!fs.existsSync(output_dir)) {
         fs.mkdirSync(output_dir);
       }
@@ -287,7 +287,7 @@ var capturePartialOutput = function (class_data_obj, flush) {
       var output_file_path = output_dir + path.sep + runId + '_part.' + (temp_output_count++) + '.json';
       logger.info('Saving partial generator JSON output file: ' + output_file_path);
       fs.writeFileSync(output_file_path, JSON.stringify(write_class_data_objects, null, 2), 'utf-8');
-      
+
       return exportToCsv(write_class_data_objects, true);
     } else {
       return Promise.resolve();
