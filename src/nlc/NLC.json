@@ -27,7 +27,7 @@
 			"description": "Suggest a Bluemix service",
 			"emittarget": "bluemix.suggest.service",
 			"texts": [
-				"Suggest services to classify SMS messages or text",
+				"Suggest services to classify SMS messages or text.",
 				"Recommend services to integrate weather data into my app",
 				"Show me services that can be used for analytics",
 				"Recommend services that can be added to my mobile app",
