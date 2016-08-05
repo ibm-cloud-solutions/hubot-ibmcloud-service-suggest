@@ -27,7 +27,7 @@ if(process.env.LOG_LVL) {
 var browser;
 const MAX_PAGE_LOAD_ATTEMPTS=3;
 const filtered_extensions = ['.pdf', '.zip', '.tar', '.tar.gz', '.exe', '.mp4', '.mov']; // wouldn't crawl links to docs ending with these extensions.
-const jquery_path = appRoot + path.sep + 'lib' + path.sep + 'jquery.min.js';
+const jquery_path = appRoot + path.sep + 'src' + path.sep + 'lib' + path.sep + 'jquery.min.js';
 
 const cache_pageData = new hashes.HashTable(); // in-memory cache of all loaded pageData.  only cleared on release.
 const cache_stats = {
@@ -38,9 +38,9 @@ const cache_stats = {
 /*
  * This is a crawler implementation that works with dynamic webpages that use JS.  It works by loading the pages in slimerjs, see https://slimerjs.org/.
  * Then using a node to slimer bridge module (i.e. node-phantom-simple) to access the contents of the page.
- * 
+ *
  * Currently this crawler will only go 2 levels deep.
- * 
+ *
  * Usage pattern:
  *    var crawler_dynamic = require('./crawler_dynamic');
  *    crawler_dynamic.init()...
@@ -200,7 +200,7 @@ var addToCache = function(url, pageData) {
 // creates and opens a page.  resolves promise with "pageData" object for this url.
 var loadPage = function(url, loadAttemptCount) {
   logger.debug('loadPage invoked.  url: ' + url);
-  
+
   if(!browser) {
     return Promise.reject('Unable to load page.  Browser not properly initialized.');
   }
@@ -210,7 +210,7 @@ var loadPage = function(url, loadAttemptCount) {
   } else {
     loadAttemptCount++;
   }
-  
+
   if(loadAttemptCount > MAX_PAGE_LOAD_ATTEMPTS) {
     return Promise.reject(`Page failed to reload ${MAX_PAGE_LOAD_ATTEMPTS} times.  url: ${url}`);
   }
