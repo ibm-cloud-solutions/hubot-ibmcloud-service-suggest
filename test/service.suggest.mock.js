@@ -52,5 +52,11 @@ module.exports = {
       text: 'error'
     })
     .reply(500, 'Some 500 error message from the NLC service');
+
+    // Mock route for when the old classifier is deleted
+    nlcScope.delete('/v1/classifiers/cd02b5x110-nlc-old').reply(200, function() {
+      return {};
+    });
+
   }
 };

@@ -11,6 +11,7 @@ const nlc = {
   url: process.env.HUBOT_WATSON_NLC_URL,
   username: process.env.HUBOT_WATSON_NLC_USERNAME,
   password: process.env.HUBOT_WATSON_NLC_PASSWORD,
+  prefix: process.env.HUBOT_WATSON_NLC_SUGGEST_PREFIX
 };
 
 if (!nlc.url) {

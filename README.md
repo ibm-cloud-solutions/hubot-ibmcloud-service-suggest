@@ -27,6 +27,7 @@ Steps for adding this to your existing hubot:
 export HUBOT_WATSON_NLC_URL=<API URL for Watson Natural Language Classifier>
 export HUBOT_WATSON_NLC_USERNAME=<Watson NLC Username>
 export HUBOT_WATSON_NLC_PASSWORD=<Watson NLC Password>
+export HUBOT_WATSON_NLC_SUGGEST_PREFIX=<Optional prefix to include in NLC classifier name>
 ```
 
 5. Start up your bot & off to the races!
@@ -58,6 +59,8 @@ export HUBOT_BLUEMIX_PASSWORD=<Password for the Bluemix use>
 2. Download the jquery.min.js library to the `lib` folder of this project.  This can be obtained from here: http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
 3. Run `npm run update-config` to generate or update `data/services-data.json`.
 4. Review `data/services-data.json` file changes.  Load the doc page of added services to confirm quality of doc and what the service is called on the doc pages.  If services is referred to by names other than their doc_name attribute, then add those names to doc_name.
+  - Optional: Full manual training can be done by adding `class_text` array of strings in `nlc_class_info` objects.
+  - Optional: To still using crawler generated data, but also include partial manual training data add `additional_class_text` instead of `class_text`.
 5. Use crawler to produce training data:
   - `npm run crawler -- --key=<YOUR_ALCHEMY_API_KEY>`
 6. Review output from crawler and copy the generated csv file into the data directory using the next version number of the `data/hubot-service-suggest` .csv file.
