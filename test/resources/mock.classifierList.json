@@ -1,8 +1,17 @@
 {
   "classifiers": [
     {
+      "classifier_id": "cd02b5x110-nlc-old",
+      "note": "This an old version that should be deleted when service suggest starts up",
+      "url": "https://watson-nlc-api/v1/classifiers/cd02b5x110-nlc-old",
+      "name": "hubot-service-suggest-v1",
+      "language": "en",
+      "created": "2016-06-29T15:24:48.919Z"
+    },
+    {
       "classifier_id": "cd02b5x110-nlc-5103",
-      "url": "https://testClassifierUrl",
+      "note": "This is the current version whose ID will be used for other operations",
+      "url": "https://watson-nlc-api/v1/classifiers/cd02b5x110-nlc-5103",
       "name": "hubot-service-suggest-v2",
       "language": "en",
       "created": "2016-06-29T15:24:48.919Z"

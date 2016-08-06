@@ -18,6 +18,7 @@ const fs = require('fs');
 const path = require('path');
 const TAG = path.basename(__filename);
 const NLCManager = require('hubot-ibmcloud-cognitive-lib').nlcManager;
+const watson = require('watson-developer-cloud');
 const palette = require('hubot-ibmcloud-utils').palette;
 const activity = require('hubot-ibmcloud-activity-emitter');
 const env = require('../lib/env.js');
@@ -89,8 +90,8 @@ function getTrainingDataInfo(robot) {
       if(matches) {
         trainingDataInfo = {
           path: path.resolve(__dirname, '../../data', matches[0]),
-          version: matches[1],
-          classifierName: matches[0].substring(0, matches[0].length - '.csv'.length)
+          version: parseInt(matches[1]),
+          classifierName: (env.nlc.prefix ? env.nlc.prefix + '-' : '') + matches[0].substring(0, matches[0].length - '.csv'.length)
         };
         break;
       }
@@ -108,6 +109,43 @@ function getTrainingDataInfo(robot) {
   }
 
   return trainingDataInfo;
+}
+
+// finds previous versions of the classifiers for service suggests and deletes them.
+function cleanupOldClassifiers(robot, trainingDataInfo) {
+  let nlc = watson.natural_language_classifier({
+    url: env.nlc.url,
+    username: env.nlc.username,
+    password: env.nlc.password,
+    version: 'v1'
+  });
+
+  let classifierBaseName = trainingDataInfo.classifierName.substring(0, trainingDataInfo.classifierName.lastIndexOf('-v'));
+  let regex = new RegExp(classifierBaseName + '-v(\\d+)');
+
+  robot.logger.debug(`${TAG}: checking for older versions of the classifier: ${classifierBaseName}`);
+  nlc.list({}, (err, response) => {
+    if (err) {
+      robot.logger.error(`${TAG}: error retrieving list of potential classifiers to remove.  Error: ${JSON.stringify(err)}`);
+    }
+    else {
+      response.classifiers.forEach((classifier) => {
+        let matches = classifier.name.match(regex);
+
+        if(matches && matches[1] < trainingDataInfo.version) {
+          robot.logger.info(`${TAG}: Asynch call using nlc library to delete old service suggest classifier: ${classifier.name}`);
+          nlc.remove({classifier_id: classifier.classifier_id}, (err, result) => {
+            if (err){
+              robot.logger.error(`${TAG}: error removing old classifier: ${JSON.stringify(classifier)} Error: ${JSON.stringify(err)}`);
+            }
+            else {
+              robot.logger.info(`${TAG}: Successfully deleted old service suggest classifier: ${classifier.name}`);
+            }
+          });
+        }
+      });
+    }
+  });
 }
 
 function suggestServices(robot, res, description, nlcManager){
@@ -187,9 +225,11 @@ module.exports = (robot) => {
       training_data: fs.createReadStream(trainingDataInfo.path),
       version: 'v1'
     };
+
+    cleanupOldClassifiers(robot, trainingDataInfo);
     nlcManager = new NLCManager(nlcOptions);
 
-    robot.logger.info(`${TAG}: checking status of NLC training for service suggest.`);
+    robot.logger.info(`${TAG}: checking status of NLC training for service suggest classifier: ${trainingDataInfo.classifierName}`);
     nlcManager.trainIfNeeded().then((classifier)=>{
       robot.logger.debug(`${TAG}: classifier for NLC service suggest: ${JSON.stringify(classifier)}`);
 
