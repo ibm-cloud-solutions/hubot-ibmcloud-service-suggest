@@ -65,7 +65,8 @@ export HUBOT_BLUEMIX_PASSWORD=<Password for the Bluemix use>
   - `npm run crawler -- --key=<YOUR_ALCHEMY_API_KEY>`
 6. Review output from crawler and copy the generated csv file into the data directory using the next version number of the `data/hubot-service-suggest` .csv file.
   - `cp output/nlcTrainingData.csv data/hubot-service-suggest_v2.csv`
-7. Remove the previous version of the .csv file
+7. Review potential deprecated services.  The crawler will log a list of such services to `output/deprecation_watch_list.json`.  If these services are truly deprecated, then remove them from the `nlc_class_info` section of `data/services-data.json` and add them to the blacklist section. Also remove them from the new `.csv` training data file.
+8. Remove the previous version of the .csv file
   - `rm data/hubot-service-suggest_v1.csv`
 
 The bot will automatically detect the version update and train with the new .csv file.

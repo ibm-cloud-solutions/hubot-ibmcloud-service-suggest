@@ -34,6 +34,8 @@ var config_obj = {};
 var class_data_objs = []; // In memory store of data gathered for each class.
 var temp_class_data_objs = []; // Temp array of recently processed classes.
 var temp_output_count = 0;
+const deprecation_watch_list = []; // Potentially deprecated services.
+const DEPRECATE_SEARCH_STRING = 'deprecat';
 var output_dir = 'output';
 var processing_class_count;
 var processing_class_total;
@@ -353,16 +355,20 @@ var contributeClassText = function(class_data_obj, classElement) {
   class_data_obj.class_text = _.concat(class_data_obj.processed_keywords, class_data_obj.processed_concepts, class_data_obj.processed_relations, additionalManualData);
   class_data_obj.class_text = _.uniq(class_data_obj.class_text);
 
+  // Additional filtering
   class_data_obj.class_text = class_data_obj.class_text.filter((element)=>{
 
+    // Filter out text that is only a #
     if(!isNaN(element)) {
       return false;
     }
 
+    // Optionally filter out one word training data
     if(argv.exclude_one_word && element.split(/\s+/).length < 2) {
       return false;
     }
 
+    // Filter out training data that exceeds the limit imposed by NLC service.
     if(element.length > 1024) {
       logger.warn('omitting training data entry that exceeds max phrase length of 1024');
       logger.debug('omitted phrase: ' + element);
@@ -374,6 +380,16 @@ var contributeClassText = function(class_data_obj, classElement) {
 
   if(!class_data_obj.class_text.length) {
     logger.info(`**** Detected class with no training data: ${class_data_obj.class_name} ****`);
+  } else {
+    // check to see if this service maybe deprecated and add to watch list.
+    for(let i = 0; i < class_data_obj.class_text.length; ++i) {
+      let text = class_data_obj.class_text[i];
+      if(containsIgnoreCase(text, DEPRECATE_SEARCH_STRING)) {
+        logger.warn(`detected potentially deprecated service: ${classElement.class_name}`);
+        deprecation_watch_list.push(classElement.class_name);
+        break;
+      }
+    }
   }
 }
 
@@ -688,6 +704,11 @@ crawler_impl.initialize().then(()=>{
 }).then(()=> {
   if(!argv.output_freq) {
     return exportToCsv(class_data_objs);
+  }
+}).then(()=> {
+  if(deprecation_watch_list.length) {
+    logger.info(`List of potentially deprecated services: ${JSON.stringify(deprecation_watch_list)}`);
+    fs.writeFileSync(output_dir + path.sep  + 'deprecation_watch_list.json', JSON.stringify(deprecation_watch_list, null, 2) , 'utf-8');
   }
 }).then(()=> {
   let crawler_to_release = crawler_impl;

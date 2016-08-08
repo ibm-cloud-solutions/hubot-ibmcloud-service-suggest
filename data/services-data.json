@@ -14,7 +14,9 @@
     "Reverse Geocoding",
     "Searchly",
     "Travel Boundary Service",
-    "Validate Address"
+    "Validate Address",
+    "Mobile Data",
+    "Push"
   ],
   "nlc_class_info": [
     {
@@ -136,16 +138,6 @@
       "class_name": "Cloudant NoSQL DB",
       "doc_name": "Cloudant",
       "doc_link": "https://www.ng.bluemix.net/docs/#services/Cloudant/index.html#Cloudant"
-    },
-    {
-      "class_name": "Concept Insights",
-      "doc_name": "Concept Insights",
-      "doc_link": "https://www.ibm.com/watson/developercloud/doc/concept-insights/"
-    },
-    {
-      "class_name": "Connect & Compose",
-      "doc_name": "Connect & Compose",
-      "doc_link": "https://console.ng.bluemix.net/docs/services/ConnectandCompose/index.html"
     },
     {
       "class_name": "Conversation",
@@ -403,11 +395,6 @@
       "class_name": "Mobile Analytics",
       "doc_name": "Mobile Analytics",
       "doc_link": "https://console.ng.bluemix.net/docs/services/mobileanalytics/index.html"
-    },
-    {
-      "class_name": "Mobile App Builder",
-      "doc_name": "Mobile App Builder, MAB",
-      "doc_link": "https://new-console.ng.bluemix.net/docs/services/mobileappbuilder/index.html"
     },
     {
       "class_name": "Mobile Application Content Manager",

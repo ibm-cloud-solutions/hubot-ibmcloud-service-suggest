@@ -10,6 +10,7 @@ const path = require('path');
 const fs = require('fs');
 const yargs = require('yargs');
 const appRoot = require('app-root-path');
+const _ = require('lodash');
 
 const configPath = path.resolve(appRoot.toString(), 'data', 'services-data.json');
 const DEFAULT_KEYWORD_THRESHOLD = 70;
@@ -48,8 +49,9 @@ try {
 }
 
 const cf = require('hubot-cf-convenience').promise.then((result) => {
-  var servicesNotIncluded = [];
+  var missingInfoNotIncluded = [];
   var blacklistNotIncluded = [];
+  var deprecatedNotIncluded = [];
   var removedServices = [];
   var allServices = {};
 
@@ -59,13 +61,16 @@ const cf = require('hubot-cf-convenience').promise.then((result) => {
       if(Array.isArray(config.blacklist) && config.blacklist.indexOf(service.display_name) > -1) {
         blacklistNotIncluded.push(service);
         return false;
+      } else if(service.deprecated) {
+        deprecatedNotIncluded.push(service);
+        return false;
       } else if (existingServices.indexOf(service.display_name) < 0) {
         return true;
       } else {
         return false;
       }
     } else {
-      servicesNotIncluded.push(service);
+      missingInfoNotIncluded.push(service);
       return false;
     }
   }).map((service) => {
@@ -97,7 +102,16 @@ const cf = require('hubot-cf-convenience').promise.then((result) => {
 
   // Remove services from config that are no longer on Bluemix
   for (var i = 0; i < config.nlc_class_info.length; i++) {
+    let removeIt = false;
+
     if (!allServices[config.nlc_class_info[i].class_name]) {
+      removeIt = true;
+    }
+    else if(_.find(deprecatedNotIncluded, { 'display_name': config.nlc_class_info[i].class_name })) {
+      removeIt = true;
+    }
+
+    if(removeIt) {
       removedServices.push(config.nlc_class_info[i].class_name);
       config.nlc_class_info.splice(i, 1);
       i--;
@@ -109,19 +123,25 @@ const cf = require('hubot-cf-convenience').promise.then((result) => {
       throw err;
     }
     console.log('-----------------------------------------------');
-    console.log('Not included because missing documentation URL:');
+    console.log('Not included because missing service info, documentation URL:');
     console.log('-----------------------------------------------');
-    for (var j = 0; j < servicesNotIncluded.length; j++) {
-      console.log(servicesNotIncluded[j].label);
+    for (var j = 0; j < missingInfoNotIncluded.length; j++) {
+      console.log(missingInfoNotIncluded[j].display_name);
     }
     console.log('-----------------------------------------------');
     console.log('Not included because on blacklist:');
     console.log('-----------------------------------------------');
     for (var j = 0; j < blacklistNotIncluded.length; j++) {
-      console.log(blacklistNotIncluded[j].label);
+      console.log(blacklistNotIncluded[j].display_name);
     }
     console.log('-----------------------------------------------');
-    console.log('Removed because no longer exists on Bluemix:');
+    console.log('Not included because service has been marked as deprecated:');
+    console.log('-----------------------------------------------');
+    for (var j = 0; j < deprecatedNotIncluded.length; j++) {
+      console.log(deprecatedNotIncluded[j].display_name);
+    }
+    console.log('-----------------------------------------------');
+    console.log('Removed because no longer exists on Bluemix or has been deprecated:');
     console.log('-----------------------------------------------');
     for (var j = 0; j < removedServices.length; j++) {
       console.log(removedServices[j]);
