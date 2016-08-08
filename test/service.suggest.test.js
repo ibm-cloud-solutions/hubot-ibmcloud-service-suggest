@@ -12,7 +12,8 @@ const helper = new Helper('../src/scripts');
 const appRoot = require('app-root-path');
 const expect = require('chai').expect;
 const mockUtils = require('./service.suggest.mock.js');
-
+const rewire = require('rewire');
+const suggestListRewire = rewire('../src/scripts/suggest.list.js');
 
 // --------------------------------------------------------------
 // i18n (internationalization)
@@ -66,6 +67,28 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
           expect(event.attachments[3].title).to.eql('service3');
           done();
         }
+      });
+      room.user.say('mimiron', '@hubot suggest list').then();
+    });
+
+    it('should send slack event with NLC not configured message', function(done) {
+      var revert = suggestListRewire.__set__('env.isNlcConfigured', false);
+      room.robot.on('ibmcloud.formatter', function(event) {
+        expect(event.message).to.be.a('string');
+        expect(event.message).to.contain(i18n.__('suggest.nlc.not.configured'));
+        revert();
+        done();
+      });
+      room.user.say('mimiron', '@hubot suggest list').then();
+    });
+
+    it('should send slack event with empty list message', function(done) {
+      var revert = suggestListRewire.__set__('servicesData.nlc_class_info', []);
+      room.robot.on('ibmcloud.formatter', function(event) {
+        expect(event.message).to.be.a('string');
+        expect(event.message).to.contain(i18n.__('suggest.list.no.services'));
+        revert();
+        done();
       });
       room.user.say('mimiron', '@hubot suggest list').then();
     });
