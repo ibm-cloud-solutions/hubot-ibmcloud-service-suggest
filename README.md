@@ -56,7 +56,7 @@ export HUBOT_BLUEMIX_SPACE=<Bluemix space>
 export HUBOT_BLUEMIX_USER=<Bluemix User ID>
 export HUBOT_BLUEMIX_PASSWORD=<Password for the Bluemix use>
 ```
-2. Download the jquery.min.js library to the `lib` folder of this project.  This can be obtained from here: http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
+2. Download the jquery.min.js library into the `hubot-ibmcloud-service-suggest` project folder.  This can be obtained from here: http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
 3. Run `npm run update-config` to generate or update `data/services-data.json`.
 4. Review `data/services-data.json` file changes.  Load the doc page of added services to confirm quality of doc and what the service is called on the doc pages.  If services is referred to by names other than their doc_name attribute, then add those names to doc_name.
   - Optional: Full manual training can be done by adding `class_text` array of strings in `nlc_class_info` objects.

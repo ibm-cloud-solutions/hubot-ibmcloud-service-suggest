@@ -134,9 +134,9 @@ function cleanupOldClassifiers(robot, trainingDataInfo) {
 
         if(matches && matches[1] < trainingDataInfo.version) {
           robot.logger.info(`${TAG}: Asynch call using nlc library to delete old service suggest classifier: ${classifier.name}`);
-          nlc.remove({classifier_id: classifier.classifier_id}, (err, result) => {
-            if (err){
-              robot.logger.error(`${TAG}: error removing old classifier: ${JSON.stringify(classifier)} Error: ${JSON.stringify(err)}`);
+          nlc.remove({classifier_id: classifier.classifier_id}, (error, result) => {
+            if (error){
+              robot.logger.error(`${TAG}: error removing old classifier: ${JSON.stringify(classifier)} Error: ${JSON.stringify(error)}`);
             }
             else {
               robot.logger.info(`${TAG}: Successfully deleted old service suggest classifier: ${classifier.name}`);
