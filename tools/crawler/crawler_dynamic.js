@@ -27,7 +27,7 @@ if(process.env.LOG_LVL) {
 var browser;
 const MAX_PAGE_LOAD_ATTEMPTS=3;
 const filtered_extensions = ['.pdf', '.zip', '.tar', '.tar.gz', '.exe', '.mp4', '.mov']; // wouldn't crawl links to docs ending with these extensions.
-const jquery_path = appRoot + path.sep + 'src' + path.sep + 'lib' + path.sep + 'jquery.min.js';
+const jquery_path = appRoot + path.sep + 'jquery.min.js';
 
 const cache_pageData = new hashes.HashTable(); // in-memory cache of all loaded pageData.  only cleared on release.
 const cache_stats = {
