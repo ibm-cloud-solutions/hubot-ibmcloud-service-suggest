@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/ibm-cloud-solutions/hubot-ibmcloud-service-suggest.svg?branch=master)](https://travis-ci.org/ibm-cloud-solutions/hubot-ibmcloud-service-suggest)
-[![Coverage Status](https://coveralls.io/repos/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/badge.svg?branch=cleanup)](https://coveralls.io/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/badge.svg?branch=master)](https://coveralls.io/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest?branch=master)
 [![Dependency Status](https://dependencyci.com/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/badge)](https://dependencyci.com/github/ibm-cloud-solutions/hubot-ibmcloud-service-suggest)
 [![npm](https://img.shields.io/npm/v/hubot-ibmcloud-service-suggest.svg?maxAge=2592000)](https://www.npmjs.com/package/hubot-ibmcloud-service-suggest)
 
