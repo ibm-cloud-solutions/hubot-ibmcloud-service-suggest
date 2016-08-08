@@ -12,6 +12,19 @@
        { "class_name": "service2",
          "confidence": 0.007664037806209637 } ]
   },
+  "notInServiceData": {
+    "classifier_id": "cd02b5x110-nlc-5110",
+    "url": "https://watson-nlc-api/v1/classifiers/cd02b5x110-nlc-5110",
+    "text" : "I want top the top three results.",
+    "top_class": "service5",
+    "classes":
+     [ { "class_name": "service5",
+       "confidence": 0.1672086742164803 },
+       { "class_name": "service1",
+         "confidence": 0.00791357678999946 },
+       { "class_name": "service2",
+         "confidence": 0.007664037806209637 } ]
+  },
   "stillTraining": {
     "classifier_id": "cd02b5x110-nlc-5110",
     "url": "https://watson-nlc-api/v1/classifiers/cd02b5x110-nlc-5110",
