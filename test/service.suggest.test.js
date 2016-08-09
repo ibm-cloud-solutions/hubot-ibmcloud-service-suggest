@@ -42,15 +42,6 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
 
   beforeEach(function() {
     room = helper.createRoom();
-    // Force all emits into a reply.
-    room.robot.on('ibmcloud.formatter', function(event) {
-      if (event.message) {
-        event.response.reply(event.message);
-      }
-      else {
-        event.response.send({attachments: event.attachments});
-      }
-    });
   });
 
   afterEach(function() {
@@ -145,6 +136,15 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
       room.user.say('mimiron', '@hubot suggest service no matches').then();
     });
 
+    it('should send a slack event with an internal error message', function(done) {
+      room.robot.on('ibmcloud.formatter', function(event) {
+        expect(event.message).to.be.a('string');
+        expect(event.message).to.contain(i18n.__('suggest.nlc.internal.error'));
+        done();
+      });
+      room.user.say('mimiron', '@hubot suggest service internal error').then();
+    });
+
     it('should send a slack event with a 500 error message', function(done) {
       room.robot.on('ibmcloud.formatter', function(event) {
         expect(event.message).to.be.a('string');
@@ -154,7 +154,7 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
       room.user.say('mimiron', '@hubot suggest service error').then();
     });
   });
-  
+
   context('user calls `suggest help`', function() {
     it('should respond with help', function(done) {
       room.robot.on('ibmcloud.formatter', (event) => {
@@ -170,6 +170,33 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
         }
       });
       room.user.say('mimiron', '@hubot suggest help').then();
+    });
+  });
+});
+
+describe('Interacting with Bluemix Service Suggest with classifier status training', function () {
+  let room;
+
+  before(function() {
+    mockUtils.setupTrainingMockery();
+  });
+
+  beforeEach(function() {
+    room = helper.createRoom();
+  });
+
+  afterEach(function() {
+    room.destroy();
+  });
+
+  context('user calls `suggest service` while classifier is still in training', function() {
+    it('should respond with still training message', function(done) {
+      room.robot.on('ibmcloud.formatter', (event) => {
+        expect(event.message).to.be.a('string');
+        expect(event.message).to.contain(i18n.__('suggest.classifer.training'));
+        done();
+      });
+      room.user.say('mimiron', '@hubot suggest service still training').then();
     });
   });
 });
