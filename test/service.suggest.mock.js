@@ -14,6 +14,7 @@ const nlcEndpoint = env.nlc.url;
 const mockClassify = require(path.resolve(__dirname, 'resources', 'mock.classify.json'));
 const mockClassifierList = require(path.resolve(__dirname, 'resources', 'mock.classifierList.json'));
 const mockClassifierStatusAvailable = require(path.resolve(__dirname, 'resources', 'mock.classifierAvailable.json'));
+const mockClassifierStatusTraining = require(path.resolve(__dirname, 'resources', 'mock.classifierTraining.json'));
 
 module.exports = {
   setupMockery: function() {
@@ -32,31 +33,49 @@ module.exports = {
 		// Mock route to get classification data
     nlcScope.post('/v1/classifiers/cd02b5x110-nlc-5103/classify', {
       text: 'top three'
-    })
-		.reply(200, mockClassify.topThree);
+    }).reply(200, mockClassify.topThree);
 
-    // Mock route to get classification data
+    nlcScope.post('/v1/classifiers/cd02b5x110-nlc-5103/classify', {
+      text: 'not in data'
+    }).reply(200, mockClassify.notInServiceData);
+
     nlcScope.post('/v1/classifiers/cd02b5x110-nlc-5103/classify', {
       text: 'still training'
-    })
-    .reply(200, mockClassify.stillTraining);
+    }).reply(200, mockClassify.stillTraining);
 
-    // Mock route to get classification data
     nlcScope.post('/v1/classifiers/cd02b5x110-nlc-5103/classify', {
       text: 'no matches'
-    })
-    .reply(200, mockClassify.noMatches);
+    }).reply(200, mockClassify.noMatches);
 
-    // Mock route to get classification data
+    nlcScope.post('/v1/classifiers/cd02b5x110-nlc-5103/classify', {
+      text: 'internal error'
+    }).reply(200, 'Some 500 internal error message from the NLC service');
+
     nlcScope.post('/v1/classifiers/cd02b5x110-nlc-5103/classify', {
       text: 'error'
-    })
-    .reply(500, 'Some 500 error message from the NLC service');
+    }).reply(500, 'Some 500 error message from the NLC service');
 
     // Mock route for when the old classifier is deleted
     nlcScope.delete('/v1/classifiers/cd02b5x110-nlc-old').reply(200, function() {
       return {};
     });
+  },
+  setupTrainingMockery: function() {
+    nock.cleanAll();
+    nock.disableNetConnect();
+    let nlcScope = nock(nlcEndpoint).persist();
 
+    // Mock route to list all classifiers.
+    nlcScope.get('/v1/classifiers').reply(200, function() {
+      return mockClassifierList;
+    });
+
+    // Mock route for classifier status.
+    nlcScope.get('/v1/classifiers/cd02b5x110-nlc-5103').reply(200, mockClassifierStatusTraining);
+
+    // Mock route for when the old classifier is deleted
+    nlcScope.delete('/v1/classifiers/cd02b5x110-nlc-old').reply(200, function() {
+      return {};
+    });
   }
 };
