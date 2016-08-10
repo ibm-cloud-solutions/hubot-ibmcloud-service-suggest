@@ -21,6 +21,7 @@ var argv = yargs
     .help()
     .option('keyword_thresh', { alias: 'kt', describe: `Keyword threshold. (${DEFAULT_KEYWORD_THRESHOLD})`})
     .option('concept_thresh', { alias: 'ct', describe: `Concept relevance threshold. (${DEFAULT_CONCEPT_THRESHOLD})`})
+    .option('remove_from_csv', {alias: 'rmcsv', default: false, describe: 'Remove services from csv training file. (false)'})
     .argv;
 
 var config;
@@ -47,6 +48,55 @@ try {
     nlc_class_info: []
   };
 }
+
+var removeFromTrainingData = function(services) {
+  return new Promise((resolve, reject) => {
+    if (argv.remove_from_csv && services.length > 0) {
+      var csvPath;
+      var newCsvPath;
+      var version;
+
+      try {
+        let files = fs.readdirSync(path.resolve(__dirname, '../../data'));
+        for (let i in files) {
+          let matches = files[i].match(/hubot-service-suggest-v(\d+)\.csv/);
+          if (matches) {
+            csvPath = path.resolve(__dirname, '../../data', matches[0]);
+            version = parseInt(matches[1]);
+            newCsvPath = csvPath.replace(version, version + 1);
+          }
+        }
+
+        var csv = require('csv');
+        var read = fs.createReadStream(csvPath);
+        var write = fs.createWriteStream(newCsvPath);
+        var parse = csv.parse();
+        var transform = csv.transform(function(row,cb) {
+          var result = null;
+          if (services.indexOf(row[1]) === -1) {
+            result = row[0] + ',' + row[1] +'\n';
+          }
+          cb(null,result);
+        });
+        read.pipe(parse)
+          .pipe(transform)
+          .pipe(write).once('finish', function() {
+            fs.unlink(csvPath, function(err) {
+              if (err) {
+                reject(err);
+              }
+              console.log(`\nSuccessfully removed services from ${csvPath} and updated version.`);
+              resolve();
+            });
+          });
+      } catch(error) {
+        reject(error);
+      }
+    } else {
+      resolve();
+    }
+  });
+};
 
 const cf = require('hubot-cf-convenience').promise.then((result) => {
   var missingInfoNotIncluded = [];
@@ -152,7 +202,9 @@ const cf = require('hubot-cf-convenience').promise.then((result) => {
     for (var j = 0; j < newServices.length; j++) {
       console.log(newServices[j].class_name);
     }
-    process.exit();
+    removeFromTrainingData(removedServices).then(()=> {
+      process.exit();
+    });
   });
 
   // cf unused error causing lint to fail
