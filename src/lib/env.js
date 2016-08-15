@@ -8,9 +8,9 @@
 
 var isNlcConfigured = true;
 const nlc = {
-  url: process.env.HUBOT_WATSON_NLC_URL,
-  username: process.env.HUBOT_WATSON_NLC_USERNAME,
-  password: process.env.HUBOT_WATSON_NLC_PASSWORD,
+  url: process.env.VCAP_SERVICES_NATURAL_LANGUAGE_CLASSIFIER_0_CREDENTIALS_URL || process.env.HUBOT_WATSON_NLC_URL,
+  username: process.env.VCAP_SERVICES_NATURAL_LANGUAGE_CLASSIFIER_0_CREDENTIALS_USERNAME || process.env.HUBOT_WATSON_NLC_USERNAME,
+  password: process.env.VCAP_SERVICES_NATURAL_LANGUAGE_CLASSIFIER_0_CREDENTIALS_PASSWORD || process.env.HUBOT_WATSON_NLC_PASSWORD,
   prefix: process.env.HUBOT_WATSON_NLC_SUGGEST_PREFIX
 };
 
