@@ -223,7 +223,8 @@ module.exports = (robot) => {
       password: env.nlc.password,
       classifierName: trainingDataInfo.classifierName,
       training_data: fs.createReadStream(trainingDataInfo.path),
-      version: 'v1'
+      version: 'v1',
+      saveTrainingData: false
     };
 
     cleanupOldClassifiers(robot, trainingDataInfo);
