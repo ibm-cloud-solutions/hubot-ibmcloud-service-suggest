@@ -11,6 +11,7 @@ A hubot script for providing assistance to a user who needs help finding Bluemix
 * [Usage](#usage)
 * [Commands](#commands)
 * [Hubot Adapter Setup](#hubot-adapter-setup)
+* [Cognitive Setup](#cognitive-setup)
 * [Development](#development)
 * [License](#license)
 * [Contribute](#contribute)
@@ -41,6 +42,10 @@ export HUBOT_WATSON_NLC_SUGGEST_PREFIX=<Optional prefix to include in NLC classi
 Hubot supports a variety of adapters to connect to popular chat clients.  For more feature rich experiences you can setup the following adapters:
 - [Slack setup](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/docs/adapters/slack.md)
 - [Facebook Messenger setup](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/docs/adapters/facebook.md)
+
+## Cognitive Setup
+
+This project supports natural language interactions using Watson and other Bluemix services.  For more information on enabling these features, refer to [Cognitive Setup](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-nlc/blob/master/docs/cognitiveSetup.md).
 
 ## Development
 
