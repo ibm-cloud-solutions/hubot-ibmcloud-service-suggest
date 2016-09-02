@@ -33,18 +33,17 @@
   ],
   "author": "ibm-cloud-solutions",
   "dependencies": {
-    "hubot-ibmcloud-cognitive-lib": "latest",
     "app-root-path": "^1.2.1",
-    "config": "0.4.28",
-    "hubot": "^2.19.0",
-    "hubot-ibmcloud-activity-emitter": "latest",
-    "hubot-ibmcloud-utils": "latest",
-    "lodash": "^4.13.1",
-    "watson-developer-cloud": "^1.8.0"
+    "config": "0.4.28"
   },
   "peerDependencies": {
     "i18n-2": "^0.6.3",
-    "hubot": "^2.19.0"
+    "hubot": "^2.19.0",
+    "hubot-ibmcloud-cognitive-lib": "latest",
+    "hubot-ibmcloud-activity-emitter": "latest",
+    "hubot-ibmcloud-utils": "latest",
+    "lodash": "^4.13.1",
+    "watson-developer-cloud": "^1.8.0"    
   },
   "devDependencies": {
     "hubot-ibmcloud-auth": ">=0.0.8",
