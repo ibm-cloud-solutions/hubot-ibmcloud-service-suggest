@@ -39,9 +39,9 @@
   "peerDependencies": {
     "i18n-2": "^0.6.3",
     "hubot": "^2.19.0",
-    "hubot-ibmcloud-cognitive-lib": "latest",
-    "hubot-ibmcloud-activity-emitter": "latest",
-    "hubot-ibmcloud-utils": "latest",
+    "hubot-ibmcloud-cognitive-lib": ">=0.0.40",
+    "hubot-ibmcloud-activity-emitter": ">=0.0.3",
+    "hubot-ibmcloud-utils": ">0.0.14",
     "lodash": "^4.13.1",
     "watson-developer-cloud": "^1.8.0"    
   },
