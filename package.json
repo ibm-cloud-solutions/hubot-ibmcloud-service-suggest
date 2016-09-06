@@ -43,7 +43,7 @@
     "hubot-ibmcloud-activity-emitter": ">=0.0.3",
     "hubot-ibmcloud-utils": ">=0.0.14",
     "lodash": "^4.13.1",
-    "watson-developer-cloud": "^1.8.0"    
+    "watson-developer-cloud": ">=2.1.4"    
   },
   "devDependencies": {
     "hubot-ibmcloud-auth": ">=0.0.8",
