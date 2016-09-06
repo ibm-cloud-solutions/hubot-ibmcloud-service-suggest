@@ -1,6 +1,6 @@
 {
   "name": "hubot-ibmcloud-service-suggest",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A bot based on Watson Natural Language Classifier for finding the Bluemix service(s) matching a description of the needs",
   "license": "Apache-2.0",
   "scripts": {
@@ -43,7 +43,7 @@
     "hubot-ibmcloud-activity-emitter": ">=0.0.3",
     "hubot-ibmcloud-utils": ">=0.0.14",
     "lodash": "^4.13.1",
-    "watson-developer-cloud": ">=2.1.4"    
+    "watson-developer-cloud": ">=2.1.4"
   },
   "devDependencies": {
     "hubot-ibmcloud-auth": ">=0.0.8",
