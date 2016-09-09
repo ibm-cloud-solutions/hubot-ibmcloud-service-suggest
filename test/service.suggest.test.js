@@ -143,16 +143,6 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
       return p;
     });
 
-    it('should send a slack event with an internal error message', function() {
-      let p = portend.once(room.robot, 'ibmcloud.formatter').then(events => {
-        expect(events[0].message).to.be.a('string');
-        expect(events[0].message).to.contain(i18n.__('suggest.nlc.internal.error'));
-      });
-
-      room.user.say('mimiron', '@hubot suggest service internal error');
-      return p;
-    });
-
     it('should send a slack event with a 500 error message', function() {
       let p = portend.once(room.robot, 'ibmcloud.formatter').then(events => {
         expect(events[0].message).to.be.a('string');
