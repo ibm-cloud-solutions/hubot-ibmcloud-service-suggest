@@ -7,6 +7,7 @@ Want to contribute to this repository? Please read below first:
  - [Doc Fixes](#doc-fixes)
  - [Guidelines](#submission-guidelines)
  - [Coding Standards](#coding-standards)
+ - [Testing](#testing)
  - [Signing the CLA](#signing-the-cla)
 
 ## Issues and Bugs
@@ -51,7 +52,7 @@ Before you submit your pull request consider the following guidelines:
      ```
 * Create your patch, **including appropriate test cases**.
 * Follow our [Coding Standards](#coding-standards).
-* Test your branch via `npm test`
+* Test your branch via `npm test` and add new test cases where appropriate per the [testing guidelines](#testing).
 * Commit your changes using a descriptive commit message.
 
      ```shell
@@ -123,10 +124,76 @@ We use [Strongloop's](https://github.com/strongloop/eslint-config-strongloop) es
 
 If you decide to not install a linter addon, or cannot, you can run `npm run lint` to get a report of any style issues. Any issues not fixed will be caught during CI, and _will_ prevent merging.
 
+## Testing
+
+All code changes that impact test cases should also be accompanied with the appropriate changes to the test cases.  Changes that result in a loss of coverage may be denied.  
+
+In general, `hubot-ibmcloud-*` libraries are tested using the [hubot-test-helper](https://github.com/mtsmfm/hubot-test-helper) in conjunction with [portend](https://github.com/nsand/portend), a library that promisifies the events that the Hubot scripts emit.  This is the recommended pattern for testing `hubot-ibmcloud-*` scripts to ensure that assertion errors cause tests to fail and the actual error is surfaced through the test runner, as opposed to surfacing as timeouts that have to be investigated by developers.
+
+At the top level of each test suite, we mock the required dependencies and create the mocked room using `hubot-test-helper`:
+
+```
+before(function() {
+	mockUtils.setupMockery();
+	mockESUtils.setupMockery();
+	// initialize cf, hubot-test-helper doesn't test Middleware
+	cf = require('hubot-cf-convenience');
+	return cf.promise.then();
+});
+
+beforeEach(function() {
+	room = helper.createRoom();
+});
+
+afterEach(function() {
+	room.destroy();
+});
+```
+
+
+An example of testing a script that emits a text message:
+
+```
+it('should respond with current space', function() {
+	room.user.say('mimiron', '@hubot space current');
+
+	return portend.once(room.robot, 'ibmcloud.formatter').then(events => {
+		expect(events[0].message).to.be.a('string');
+		expect(events[0].message).to.eql(`${i18n.__('space.current', 'testSpace')}`);
+	});
+});
+```
+
+An example of testing a script that emits something with an attachment:
+
+```
+it('should respond with the spaces', function() {
+	room.user.say('mimiron', '@hubot list my spaces');
+
+	return portend.once(room.robot, 'ibmcloud.formatter').then(event => {
+		expect(event[0].attachments.length).to.eql(1);
+		expect(event[0].attachments[0].title).to.eql('testSpace');
+	});
+});
+```
+
+An example of testing a script that emits multiple events:
+
+```
+it('should respond with the cannot find the space', function() {
+	room.user.say('mimiron', '@hubot space set unknownSpace');
+
+	return portend.twice(room.robot, 'ibmcloud.formatter').then(events => {
+		expect(events[0].message).to.eql(i18n.__('space.set.in.progress', 'unknownSpace'));
+		expect(events[1].message).to.eql(i18n.__('space.not.found', 'unknownSpace'));
+	});
+});
+```
+
 ## Signing the CLA
 
 Please sign our Contributor License Agreement (CLA) before sending pull requests. For any code
 changes to be accepted, the CLA must be signed.
 
-* [For individuals](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/cla-individual.pdf).
-* [For corporations](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-service-suggest/blob/master/cla-corporate.pdf).
+* [For individuals](./cla-individual.pdf).
+* [For corporations](./cla-corporate.pdf).
