@@ -1,6 +1,6 @@
 {
   "name": "hubot-ibmcloud-service-suggest",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "A bot based on Watson Natural Language Classifier for finding the Bluemix service(s) matching a description of the needs",
   "license": "Apache-2.0",
   "scripts": {
