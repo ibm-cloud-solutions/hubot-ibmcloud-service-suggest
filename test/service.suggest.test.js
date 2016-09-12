@@ -22,7 +22,7 @@ const portend = require('portend');
 // It will read from a peer messages.json file.  Later, these
 // messages can be referenced throughout the module.
 // --------------------------------------------------------------
-var i18n = new (require('i18n-2'))({
+const i18n = new (require('i18n-2'))({
   locales: ['en'],
   extension: '.json',
   // Add more languages to the list of locales when the files are created.
@@ -66,7 +66,7 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
     });
 
     it('should send slack event with NLC not configured message', function() {
-      var revert = suggestListRewire.__set__('env.isNlcConfigured', false);
+      let revert = suggestListRewire.__set__('env.isNlcConfigured', false);
       let p = portend.once(room.robot, 'ibmcloud.formatter').then(events => {
         expect(events[0].message).to.be.a('string');
         expect(events[0].message).to.eql(i18n.__('suggest.nlc.not.configured'));
@@ -78,7 +78,7 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
     });
 
     it('should send slack event with empty list message', function() {
-      var revert = suggestListRewire.__set__('servicesData.nlc_class_info', []);
+      let revert = suggestListRewire.__set__('servicesData.nlc_class_info', []);
       let p = portend.once(room.robot, 'ibmcloud.formatter').then(events => {
         expect(events[0].message).to.be.a('string');
         expect(events[0].message).to.eql(i18n.__('suggest.list.no.services'));
@@ -112,7 +112,7 @@ describe('Interacting with Bluemix Service Suggest via Slack', function () {
     });
 
     it('should send a slack event with NLC not configured message', function() {
-      var revert = suggestServiceRewire.__set__('env.isNlcConfigured', false);
+      let revert = suggestServiceRewire.__set__('env.isNlcConfigured', false);
       let p = portend.once(room.robot, 'ibmcloud.formatter').then(events => {
         expect(events[0].message).to.be.a('string');
         expect(events[0].message).to.eql(i18n.__('suggest.nlc.not.configured'));

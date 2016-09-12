@@ -20,7 +20,7 @@ const portend = require('portend');
 // It will read from a peer messages.json file.  Later, these
 // messages can be referenced throughout the module.
 // --------------------------------------------------------------
-var i18n = new (require('i18n-2'))({
+const i18n = new (require('i18n-2'))({
   locales: ['en'],
   extension: '.json',
   // Add more languages to the list of locales when the files are created.
@@ -59,7 +59,7 @@ describe('Interacting with Bluemix Service Suggest via Natural Language', functi
         expect(events[1].attachments[3].title).to.eql('service3');
       });
 
-      var res = { message: {text: 'list services you can suggest', user: {id: 'mimiron'}}, response: room };
+      let res = { message: {text: 'list services you can suggest', user: {id: 'mimiron'}}, response: room };
       room.robot.emit('bluemix.suggest.list', res, {});
       return p;
     });
@@ -72,7 +72,7 @@ describe('Interacting with Bluemix Service Suggest via Natural Language', functi
         expect(events[1].attachments.length).to.eql(3);
       });
 
-      var res = { message: {text: 'top three', user: {id: 'mimiron'}}, response: room };
+      let res = { message: {text: 'top three', user: {id: 'mimiron'}}, response: room };
       room.robot.emit('bluemix.suggest.service', res, {});
       return p;
     });
@@ -85,7 +85,7 @@ describe('Interacting with Bluemix Service Suggest via Natural Language', functi
         expect(events[0].message).to.eql(i18n.__('suggest.classifer.training'));
       });
 
-      var res = { message: {text: 'still training', user: {id: 'mimiron'}}, response: room };
+      let res = { message: {text: 'still training', user: {id: 'mimiron'}}, response: room };
       room.robot.emit('bluemix.suggest.service', res, {});
       return p;
     });
@@ -98,7 +98,7 @@ describe('Interacting with Bluemix Service Suggest via Natural Language', functi
         expect(events[0].message).to.eql(i18n.__('suggest.no.matches'));
       });
 
-      var res = { message: {text: 'no matches', user: {id: 'mimiron'}}, response: room };
+      let res = { message: {text: 'no matches', user: {id: 'mimiron'}}, response: room };
       room.robot.emit('bluemix.suggest.service', res, {});
       return p;
     });
@@ -111,7 +111,7 @@ describe('Interacting with Bluemix Service Suggest via Natural Language', functi
         expect(events[0].message).to.eql(i18n.__('suggest.nlc.error'));
       });
 
-      var res = { message: {text: 'error', user: {id: 'mimiron'}}, response: room };
+      let res = { message: {text: 'error', user: {id: 'mimiron'}}, response: room };
       room.robot.emit('bluemix.suggest.service', res, {});
       return p;
     });
@@ -129,7 +129,7 @@ describe('Interacting with Bluemix Service Suggest via Natural Language', functi
         expect(events[0].message).to.contain(i18n.__('help.suggest.example3'));
       });
 
-      var res = { message: {text: 'need help with service suggestions', user: {id: 'mimiron'}}, response: room };
+      let res = { message: {text: 'need help with service suggestions', user: {id: 'mimiron'}}, response: room };
       room.robot.emit('bluemix.suggest.help', res, {});
       return p;
     });
