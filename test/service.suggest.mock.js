@@ -48,10 +48,6 @@ module.exports = {
     }).reply(200, mockClassify.noMatches);
 
     nlcScope.post('/v1/classifiers/cd02b5x110-nlc-5103/classify', {
-      text: 'internal error'
-    }).reply(200, 'Some 500 internal error message from the NLC service');
-
-    nlcScope.post('/v1/classifiers/cd02b5x110-nlc-5103/classify', {
       text: 'error'
     }).reply(500, 'Some 500 error message from the NLC service');
 

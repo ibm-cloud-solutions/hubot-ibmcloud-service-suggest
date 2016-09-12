@@ -74,7 +74,8 @@
     "hubot-fb": "^3.0.0",
     "hubot-help": "^0.2.0",
     "hubot-shell": "^1.0.2",
-    "hubot-slack": "^4.0.2"
+    "hubot-slack": "^4.0.2",
+    "portend": "^1.0.0"
   },
   "main": "index.js",
   "files": [
