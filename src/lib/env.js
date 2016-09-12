@@ -14,6 +14,14 @@ const nlc = {
   prefix: process.env.HUBOT_WATSON_NLC_SUGGEST_PREFIX
 };
 
+// nlc service bound to application, overrides any other settings.
+if (process.env.VCAP_SERVICES && JSON.parse(process.env.VCAP_SERVICES).natural_language_classifier) {
+  let credentials = JSON.parse(process.env.VCAP_SERVICES).natural_language_classifier[0].credentials;
+  nlc.url = credentials.url;
+  nlc.username = credentials.username;
+  nlc.password = credentials.password;
+}
+
 if (!nlc.url) {
   console.error('HUBOT_WATSON_NLC_URL not set');
   isNlcConfigured = false;
