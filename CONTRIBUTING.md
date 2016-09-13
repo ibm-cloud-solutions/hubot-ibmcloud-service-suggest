@@ -43,7 +43,7 @@ Before you submit your pull request consider the following guidelines:
 
 * Search this repo for an open or closed Pull Request
   that relates to your submission. You don't want to duplicate effort.
-* Please sign our [Contributor License Agreement (CLA)](#signing-the-cla) before sending pull
+* If you are contributing as an individual, please review the [Developer Certificate of Origin](http://developercertificate.org/) and sign your commit with the `-s` flag. See more about signing commits [here](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work). If you are contributing on behalf of a corporation, please see our section on [signing the CLA](#signing-the-cla) before sending pull
   requests. We cannot accept code without this.
 * Make your changes in a new git branch:
 
@@ -192,8 +192,7 @@ it('should respond with the cannot find the space', function() {
 
 ## Signing the CLA
 
-Please sign our Contributor License Agreement (CLA) before sending pull requests. For any code
+Please sign our Contributor License Agreement (CLA) before sending pull requests if you are acting on behalf of a corporation. For any code
 changes to be accepted, the CLA must be signed.
 
-* [For individuals](./cla-individual.pdf).
 * [For corporations](./cla-corporate.pdf).
